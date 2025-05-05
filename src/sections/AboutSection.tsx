@@ -35,6 +35,12 @@ const AboutSection: React.FC = () => {
     { name: 'Node.js', percentage: 85, delay: 300 },
     { name: 'MongoDB', percentage: 80, delay: 400 },
     { name: 'Tailwind CSS', percentage: 95, delay: 500 },
+    { name: 'Angular', percentage: 80, delay: 600 },
+    { name: 'Java Spring', percentage: 75, delay: 700 },
+    { name: 'Jenkins', percentage: 70, delay: 800 },
+    { name: 'Sonar', percentage: 70, delay: 900 },
+    { name: 'Docker', percentage: 85, delay: 1000 },
+    { name: 'Animation : Extrêmement dans le futur', percentage: 100, delay: 1100 },
   ];
 
   const aboutContent = {
