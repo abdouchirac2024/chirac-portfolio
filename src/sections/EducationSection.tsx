@@ -45,10 +45,10 @@ const EducationSection: React.FC = () => {
       delay: 200,
     },
     {
-      degree: "Certification Scrum Master",
+      degree: "Formation en Scrum Master",
       institution: "Scrum.org",
       year: "2023",
-      grade: "Certifié",
+      grade: "udemy",
       description: "Gestion de projets agiles et méthodologie Scrum",
       delay: 400,
     },
@@ -56,9 +56,12 @@ const EducationSection: React.FC = () => {
   
   const certifications = [
     "DevOps Professional", 
-    "AWS Certified Developer", 
-    "MongoDB Certified Developer",
-    "Vue.js Certified Developer"
+    "AWS  Developer", 
+    "MongoDB  Developer",
+    "Vue.js  Developer",
+    "react js   Developer",
+    "Angular  Developer",
+    "java  Developer",
   ];
 
   const formationImages = [
@@ -123,7 +126,7 @@ const EducationSection: React.FC = () => {
           `}</style>
         </div>
         <div className={`opacity-0 ${visible ? 'animate-fade-in' : ''}`} style={{ animationDelay: '600ms' }}>
-          <h3 className="text-xl font-bold mb-6 text-center">Certifications</h3>
+          <h3 className="text-xl font-bold mb-6 text-center">Formations</h3>
           <div className="flex flex-wrap justify-center gap-3">
             {certifications.map((cert, index) => (
               <Badge key={index} variant="outline" className="px-4 py-2 text-sm">
