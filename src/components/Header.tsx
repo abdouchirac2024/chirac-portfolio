@@ -20,6 +20,7 @@ const Header: React.FC = () => {
     { title: 'À Propos', href: '#about' },
     { title: 'Projets', href: '#projects' },
     { title: 'Formation', href: '#education' },
+    { title: 'Journal', href: '#work-journal' }, // New link
     { title: 'Contact', href: '#contact' },
   ];
 
