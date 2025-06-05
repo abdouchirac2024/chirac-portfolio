@@ -1,10 +1,9 @@
-
 import React, { useRef, useEffect, useState } from 'react';
 
 interface TimelineItemProps {
   year: string;
   title: string;
-  description: string;
+  description: string | React.ReactNode;
   isLeft?: boolean;
 }
 
