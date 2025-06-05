@@ -6,9 +6,11 @@ import HeroSection from '../sections/HeroSection';
 import AboutSection from '../sections/AboutSection';
 import ProjectsSection from '../sections/ProjectsSection';
 import EducationSection from '../sections/EducationSection';
+import ExperienceSection from '../sections/ExperienceSection'; // Added import
 import ContactSection from '../sections/ContactSection';
 import CustomCursor from '../components/CustomCursor';
 import FormationSection from '../sections/FormationSection';
+import WorkJournalSection from '../sections/WorkJournalSection'; // New import
 
 const Index: React.FC = () => {
   useEffect(() => {
@@ -40,6 +42,8 @@ const Index: React.FC = () => {
         <FormationSection />
         <ProjectsSection />
         <EducationSection />
+        <ExperienceSection /> {/* Added section */}
+        <WorkJournalSection /> {/* Newly added section */}
         <ContactSection />
       </main>
       <Footer />
