@@ -1,8 +1,8 @@
 import React from 'react';
 
 const formationImages = [
-  '/lovable-uploads/formation1.jpg',
-  '/lovable-uploads/formation2.jpg'
+  '/images/formation1.jpg',
+  '/images/formation2.jpg'
 ];
 
 const FormationSection: React.FC = () => {

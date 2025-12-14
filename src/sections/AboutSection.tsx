@@ -66,7 +66,7 @@ const AboutSection: React.FC = () => {
             <div className="relative">
               <div className="w-full h-80 md:h-96 rounded-lg overflow-hidden shadow-xl">
                 <img 
-                  src="/lovable-uploads/d6a9ce7d-c905-40e5-b74f-232a1aae62ec.png" 
+                  src="/images/d6a9ce7d-c905-40e5-b74f-232a1aae62ec.png" 
                   alt="Chirac NJUTAPMVOUI" 
                   className="w-full h-full object-cover"
                 />
