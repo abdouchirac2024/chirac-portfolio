@@ -61,16 +61,28 @@
     @apply backdrop-blur-xl bg-black/30 border border-white/10;
   }
   .section-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-24;
   }
   .section-title {
-    @apply text-3xl md:text-4xl font-bold mb-6 md:mb-10 text-center;
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 md:mb-10 lg:mb-12 text-center leading-tight;
   }
   .skill-bar {
-    @apply h-2 bg-secondary rounded-full overflow-hidden;
+    @apply h-2 sm:h-2.5 bg-secondary rounded-full overflow-hidden;
   }
   .skill-progress {
     @apply h-full bg-primary transition-all ease-out duration-1000;
+  }
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+  .responsive-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8;
+  }
+  .responsive-text {
+    @apply text-sm sm:text-base md:text-lg leading-relaxed;
+  }
+  .responsive-heading {
+    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold leading-tight;
   }
 }
 
