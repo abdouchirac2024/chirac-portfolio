@@ -29,18 +29,18 @@ const AboutSection: React.FC = () => {
   }, []);
   
   const skills = [
-    { name: 'Laravel', percentage: 70, delay: 0 },
-    { name: 'Vue.js', percentage: 60, delay: 100 },
-    { name: 'Angular', percentage: 45, delay: 200 },
-    { name: 'Java', percentage: 30, delay: 300 },
-    { name: 'React.js', percentage: 68, delay: 400 },
-    { name: 'Node.js', percentage: 65, delay: 500 },
-    { name: 'MongoDB', percentage: 56, delay: 600 },
-    { name: 'Tailwind CSS', percentage: 75, delay: 700 },
-    { name: 'Jenkins', percentage: 20, delay: 800 },
-    { name: 'Sonar', percentage: 20, delay: 900 },
-    { name: 'Docker', percentage: 50, delay: 1000 },
-    { name: 'Animation : Extrêmement dans le futur', percentage: 100, delay: 1100 },
+    { name: 'Angular 19+', percentage: 85, delay: 0 },
+    { name: 'React.js', percentage: 80, delay: 100 },
+    { name: 'Vue.js', percentage: 75, delay: 200 },
+    { name: 'Laravel', percentage: 85, delay: 300 },
+    { name: 'Node.js', percentage: 75, delay: 400 },
+    { name: 'TypeScript', percentage: 90, delay: 500 },
+    { name: 'PrimeNG', percentage: 80, delay: 600 },
+    { name: 'Tailwind CSS', percentage: 90, delay: 700 },
+    { name: 'RxJS', percentage: 75, delay: 800 },
+    { name: 'MongoDB', percentage: 70, delay: 900 },
+    { name: 'Docker', percentage: 65, delay: 1000 },
+    { name: 'Jenkins & CI/CD', percentage: 60, delay: 1100 },
   ];
 
   const aboutContent = {
@@ -82,18 +82,19 @@ const AboutSection: React.FC = () => {
             }`} style={{ animationDelay: '0.2s' }}>
               <h3 className="responsive-heading mb-4 sm:mb-6">Qui suis-je?</h3>
               <p className="mb-4 sm:mb-6 responsive-text">
-                Je suis <strong>NJUTAPMVOUI Abdou Arahamanou Chirac</strong>, un développeur Full Stack passionné par la création d'applications web modernes et performantes.
+                Je suis <strong>NJUTAPMVOUI Abdou Arahamanou Chirac</strong>, un développeur Full Stack avec une expertise 
+                particulière en Angular et systèmes ERP. Récemment, j'ai développé un système complet de gestion logistique 
+                chez Multi Canal Service avec Angular 19.2.0.
               </p>
               <p className="mb-4 sm:mb-6 responsive-text">
-                Avec plusieurs années d'expérience dans le développement web, je me 
-                spécialise dans les technologies JavaScript modernes comme Vue.js, React.js, 
-                ainsi que des frameworks backend comme Laravel et Node.js. Je développe également
-                mes compétences en DevOps pour améliorer les processus de déploiement et d'intégration continue.
+                Avec plusieurs années d'expérience dans le développement web, je maîtrise un large éventail de technologies : 
+                Angular, React.js, Vue.js pour le frontend, et Laravel, Node.js pour le backend. Je développe également 
+                mes compétences en DevOps avec Docker, Jenkins et les pratiques d'intégration continue.
               </p>
               <p className="responsive-text">
-                J'aime résoudre des problèmes complexes et transformer des idées en 
-                applications fonctionnelles et esthétiques. Ma méthodologie est axée sur les 
-                bonnes pratiques, la qualité du code et une approche centrée sur l'utilisateur.
+                Ma passion réside dans la résolution de problèmes complexes et la transformation d'idées en 
+                applications robustes et esthétiques. Je privilégie les bonnes pratiques, la qualité du code, 
+                l'architecture modulaire et une approche centrée sur l'expérience utilisateur.
               </p>
             </div>
             
@@ -118,23 +119,76 @@ const AboutSection: React.FC = () => {
         <div className="mt-20">
           <h3 className="text-xl font-bold mb-10 text-center">Mon Parcours</h3>
           <div className="max-w-4xl mx-auto">
-
+            <TimelineItem 
+              year="Mai 2025 - Nov 2025"
+              title="Développeur Full Stack & Angular Specialist - MULTI CANAL SERVICE"
+              description={
+                <>
+                  Développement d'un système ERP complet avec Angular 19.2.0 pour la logistique du dernier kilomètre. 
+                  Implémentation de composants Standalone, gestion d'état avec RxJS, et intégration PrimeNG/Tailwind CSS. 
+                  Création de modules Dashboard, Gestion Utilisateurs, Courses & Livraisons, et système POS.
+                </>
+              }
+              isLeft={false}
+            />
             <TimelineItem 
               year="2024 - 2025"
               title="Développeur Full Stack - DA VINCI IT SOLUTIONS"
-              description="Développement d'applications web avec React.js, Node.js, MongoDB, Vue.js et Laravel."
+              description={
+                <>
+                  Développement d'applications web modernes avec React.js, Node.js, Express et MongoDB. 
+                  Création d'une application de blog et d'un système de gestion des dépenses avec authentification OAuth. 
+                  Conception complète du projet Congrès ADNA avec Laravel API et Vue.js.
+                </>
+              }
               isLeft={true}
             />
             <TimelineItem 
               year="2023 - 2024"
-              title="Développeur Full Stack - ADAA"
-              description="Développement de plateformes comme Jobs ADAALearning et ADAA Summit."
+              title="Développeur Full Stack & Testeur - ADAA"
+              description={
+                <>
+                  Développement et maintenance des plateformes{" "}
+                  <a 
+                    href="https://jobs.adaalearning.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    Jobs ADAALearning
+                  </a>
+                  {" "}et{" "}
+                  <a 
+                    href="https://adaasummit.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    ADAA Summit
+                  </a>
+                  . Tests fonctionnels pendant 2 mois puis développement full stack pendant 6 mois.
+                </>
+              }
               isLeft={false}
             />
             <TimelineItem 
               year="2022 - 2023"
               title="Développeur Full Stack - GENO CONSULTING"
-              description="Développement d'Africa Unity, un site de gestion d'événements avec Vue.js 3 et Laravel."
+              description={
+                <>
+                  Développement d'{" "}
+                  <a 
+                    href="https://africaunity.net" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    Africa Unity
+                  </a>
+                  , une plateforme complète de gestion d'événements, d'articles et de formations en ligne 
+                  avec Vue.js 3 en frontend et Laravel API en backend.
+                </>
+              }
               isLeft={true}
             />
           </div>
