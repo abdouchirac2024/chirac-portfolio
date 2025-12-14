@@ -57,7 +57,7 @@ const AboutSection: React.FC = () => {
   };
 
   return (
-    <section id="about" ref={sectionRef} className="py-20 bg-secondary/30 dark:bg-muted/10">
+    <section id="about" ref={sectionRef} className="py-20 bg-muted/10">
       <div className="container">
         <h2 className="section-title">À Propos</h2>
         

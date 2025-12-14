@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import ThemeToggle from './ThemeToggle';
+
 
 const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -49,16 +49,14 @@ const Header: React.FC = () => {
               {link.title}
             </a>
           ))}
-          <ThemeToggle />
         </nav>
 
         {/* Mobile Navigation */}
         <div className="md:hidden flex items-center">
-          <ThemeToggle />
           <Button
             variant="ghost"
             size="icon"
-            className="ml-2"
+            className=""
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <svg

@@ -18,7 +18,7 @@ const ParticleBackground: React.FC = () => {
       particlesArray.push(
         <div
           key={i}
-          className="absolute rounded-full bg-primary/20 dark:bg-primary/30"
+          className="absolute rounded-full bg-primary/30"
           style={{
             width: `${size}px`,
             height: `${size}px`,

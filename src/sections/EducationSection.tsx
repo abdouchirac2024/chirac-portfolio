@@ -70,7 +70,7 @@ const EducationSection: React.FC = () => {
   ];
 
   return (
-    <section id="education" ref={sectionRef} className="py-20 bg-secondary/30 dark:bg-muted/10">
+    <section id="education" ref={sectionRef} className="py-20 bg-muted/10">
       <div className="container">
         <h2 className="section-title">Formation</h2>
 

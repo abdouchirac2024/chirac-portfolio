@@ -7,7 +7,7 @@ const formationImages = [
 
 const FormationSection: React.FC = () => {
   return (
-    <section id="formation" className="py-20 bg-secondary/10 dark:bg-muted/10">
+    <section id="formation" className="py-20 bg-muted/10">
       <div className="container">
         <h2 className="section-title">Formation</h2>
         <div className="overflow-x-hidden w-full">
