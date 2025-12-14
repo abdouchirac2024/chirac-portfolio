@@ -82,8 +82,7 @@ const AboutSection: React.FC = () => {
             }`} style={{ animationDelay: '0.2s' }}>
               <h3 className="text-2xl font-bold mb-4">Qui suis-je?</h3>
               <p className="mb-4">
-                Je suis <strong>NJUTAPMVOUI Abdou Arahamanou Chirac</strong>, un développeur Full Stack et apprenti DevOps Junior 
-                actuellement chez Canal Multi Service. Je suis passionné par la création d'applications web modernes et performantes.
+                Je suis <strong>NJUTAPMVOUI Abdou Arahamanou Chirac</strong>, un développeur Full Stack passionné par la création d'applications web modernes et performantes.
               </p>
               <p className="mb-4">
                 Avec plusieurs années d'expérience dans le développement web, je me 
@@ -119,25 +118,7 @@ const AboutSection: React.FC = () => {
         <div className="mt-20">
           <h3 className="text-xl font-bold mb-10 text-center">Mon Parcours</h3>
           <div className="max-w-4xl mx-auto">
-            <TimelineItem 
-              year="2025 - Présent"
-              title="Développeur Full Stack & Apprenti DevOps Junior - CANAL MULTI SERVICE"
-              description={
-                <>
-                  Développement d'applications web et apprentissage des pratiques DevOps chez{" "}
-                  <a 
-                    href="https://multicanalservices.com/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-primary hover:underline"
-                  >
-                    Canal Multi Service
-                  </a>
-                  .
-                </>
-              }
-              isLeft={false}
-            />
+
             <TimelineItem 
               year="2024 - 2025"
               title="Développeur Full Stack - DA VINCI IT SOLUTIONS"
