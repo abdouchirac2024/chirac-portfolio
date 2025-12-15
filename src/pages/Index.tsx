@@ -40,9 +40,9 @@ const Index: React.FC = () => {
         <HeroSection />
         <AboutSection />
         <FormationSection />
+        <ExperienceSection /> {/* Moved before Projects */}
         <ProjectsSection />
         <EducationSection />
-        <ExperienceSection /> {/* Added section */}
         <WorkJournalSection /> {/* Newly added section */}
         <ContactSection />
       </main>

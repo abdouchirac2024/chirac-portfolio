@@ -18,9 +18,10 @@ const Header: React.FC = () => {
   const navLinks = [
     { title: 'Accueil', href: '#home' },
     { title: 'À Propos', href: '#about' },
+    { title: 'Expérience', href: '#experience' },
     { title: 'Projets', href: '#projects' },
     { title: 'Formation', href: '#education' },
-    { title: 'Journal', href: '#work-journal' }, // New link
+    { title: 'Journal', href: '#work-journal' },
     { title: 'Contact', href: '#contact' },
   ];
 
@@ -53,7 +54,7 @@ const Header: React.FC = () => {
 
         {/* Tablet Navigation */}
         <nav className="hidden md:flex lg:hidden items-center space-x-1">
-          {navLinks.slice(0, 4).map((link) => (
+          {navLinks.slice(0, 5).map((link) => (
             <a
               key={link.href}
               href={link.href}
