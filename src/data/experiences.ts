@@ -5,7 +5,7 @@ export const experiences: WorkExperience[] = [
     company: "Multi Canal Services",
     title: "Développeur Full Stack - Angular/ERP",
     startDate: "2025-05-12",
-    endDate: "2025-11-12",
+    endDate: "Present",
     responsibilities: [
       "Développement d'un système ERP complet pour la logistique du dernier kilomètre avec Angular 19.2.0",
       "Implémentation de composants Standalone et Lazy Loading pour optimiser les performances",

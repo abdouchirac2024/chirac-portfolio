@@ -83,7 +83,7 @@ const AboutSection: React.FC = () => {
               <h3 className="responsive-heading mb-4 sm:mb-6">Qui suis-je?</h3>
               <p className="mb-4 sm:mb-6 responsive-text">
                 Je suis <strong>NJUTAPMVOUI Abdou Arahamanou Chirac</strong>, un développeur Full Stack avec une expertise 
-                particulière en Angular et systèmes ERP. Récemment, j'ai développé un système complet de gestion logistique 
+                particulière en Angular et systèmes ERP. Actuellement, je développe un système complet de gestion logistique 
                 chez Multi Canal Service avec Angular 19.2.0.
               </p>
               <p className="mb-4 sm:mb-6 responsive-text">
@@ -120,7 +120,7 @@ const AboutSection: React.FC = () => {
           <h3 className="text-xl font-bold mb-10 text-center">Mon Parcours</h3>
           <div className="max-w-4xl mx-auto">
             <TimelineItem 
-              year="Mai 2025 - Nov 2025"
+              year="Mai 2025 - Présent"
               title="Développeur Full Stack & Angular Specialist - MULTI CANAL SERVICE"
               description={
                 <>
