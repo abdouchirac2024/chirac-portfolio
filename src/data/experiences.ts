@@ -11,6 +11,11 @@ export const experiences: WorkExperience[] = [
       "Implémentation de composants Standalone et Lazy Loading pour optimiser les performances",
       "Création d'un système de gestion d'état avec RxJS (BehaviorSubjects) pour la synchronisation temps réel",
       "Développement de modules fonctionnels : Dashboard, Gestion Utilisateurs, Courses & Livraisons, Stock",
+      "Déploiement d'applications Laravel sur Google Cloud Platform avec Cloud Run",
+      "Déploiement d'applications Angular sur Google Cloud avec Cloud Functions",
+      "Implémentation de Cloud Functions pour la purge automatique de la base de données Firebase",
+      "Développement de système de notifications Telegram via Cloud Functions",
+      "Configuration de Cloud Run pour la gestion des microservices et l'auto-scaling",
       "Intégration PrimeNG 19.1.2 avec Tailwind CSS pour une interface moderne et réactive",
       "Mise en place de la sécurité avec AuthGuard et interceptors JWT",
       "Développement du module POS (Point of Sale) pour la prise de commande rapide"
@@ -21,6 +26,12 @@ export const experiences: WorkExperience[] = [
       "Tailwind CSS",
       "RxJS",
       "TypeScript",
+      "Google Cloud Platform",
+      "Cloud Functions",
+      "Cloud Run",
+      "Firebase",
+      "Laravel",
+      "Telegram Bot API",
       "JWT Authentication",
       "Chart.js",
       "jsPDF",
@@ -36,9 +47,13 @@ export const experiences: WorkExperience[] = [
         "Système de traçabilité complet avec logs d'activité",
         "Interface POS pour commandes rapides",
         "Génération de rapports PDF et Excel",
-        "Dashboard avec statistiques interactives"
+        "Dashboard avec statistiques interactives",
+        "Déploiement automatisé sur Google Cloud Platform",
+        "Notifications Telegram en temps réel via Cloud Functions",
+        "Purge automatique de base de données Firebase avec Cloud Run",
+        "Architecture serverless avec auto-scaling"
       ],
-      architecture: "Architecture modulaire avec composants Standalone Angular, services injectables pour la gestion d'état, et API REST centralisée"
+      architecture: "Architecture cloud-native avec Angular frontend déployé via Cloud Functions, backend Laravel sur Cloud Run, base de données Firebase avec purge automatique, et système de notifications Telegram intégré"
     }
   },
   {

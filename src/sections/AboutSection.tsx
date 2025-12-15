@@ -30,17 +30,17 @@ const AboutSection: React.FC = () => {
   
   const skills = [
     { name: 'Angular 19+', percentage: 85, delay: 0 },
-    { name: 'React.js', percentage: 80, delay: 100 },
-    { name: 'Vue.js', percentage: 75, delay: 200 },
-    { name: 'Laravel', percentage: 85, delay: 300 },
-    { name: 'Node.js', percentage: 75, delay: 400 },
-    { name: 'TypeScript', percentage: 90, delay: 500 },
-    { name: 'PrimeNG', percentage: 80, delay: 600 },
-    { name: 'Tailwind CSS', percentage: 90, delay: 700 },
-    { name: 'RxJS', percentage: 75, delay: 800 },
-    { name: 'MongoDB', percentage: 70, delay: 900 },
-    { name: 'Docker', percentage: 65, delay: 1000 },
-    { name: 'Jenkins & CI/CD', percentage: 60, delay: 1100 },
+    { name: 'Google Cloud Platform', percentage: 80, delay: 100 },
+    { name: 'Cloud Functions', percentage: 85, delay: 200 },
+    { name: 'Cloud Run', percentage: 80, delay: 300 },
+    { name: 'Firebase', percentage: 75, delay: 400 },
+    { name: 'React.js', percentage: 80, delay: 500 },
+    { name: 'Vue.js', percentage: 75, delay: 600 },
+    { name: 'Laravel', percentage: 85, delay: 700 },
+    { name: 'TypeScript', percentage: 90, delay: 800 },
+    { name: 'Telegram Bot API', percentage: 70, delay: 900 },
+    { name: 'Tailwind CSS', percentage: 90, delay: 1000 },
+    { name: 'RxJS', percentage: 75, delay: 1100 },
   ];
 
   const aboutContent = {
@@ -83,13 +83,13 @@ const AboutSection: React.FC = () => {
               <h3 className="responsive-heading mb-4 sm:mb-6">Qui suis-je?</h3>
               <p className="mb-4 sm:mb-6 responsive-text">
                 Je suis <strong>NJUTAPMVOUI Abdou Arahamanou Chirac</strong>, un développeur Full Stack avec une expertise 
-                particulière en Angular et systèmes ERP. Actuellement, je développe un système complet de gestion logistique 
-                chez Multi Canal Service avec Angular 19.2.0.
+                particulière en Angular, systèmes ERP et technologies cloud. Actuellement, je développe un système complet de gestion logistique 
+                chez Multi Canal Service avec Angular 19.2.0, déployé sur Google Cloud Platform.
               </p>
               <p className="mb-4 sm:mb-6 responsive-text">
                 Avec plusieurs années d'expérience dans le développement web, je maîtrise un large éventail de technologies : 
-                Angular, React.js, Vue.js pour le frontend, et Laravel, Node.js pour le backend. Je développe également 
-                mes compétences en DevOps avec Docker, Jenkins et les pratiques d'intégration continue.
+                Angular, React.js, Vue.js pour le frontend, Laravel, Node.js pour le backend, et Google Cloud Platform pour le déploiement. 
+                J'ai une expertise avancée en Cloud Functions, Cloud Run, Firebase et systèmes de notifications automatisées.
               </p>
               <p className="responsive-text">
                 Ma passion réside dans la résolution de problèmes complexes et la transformation d'idées en 
@@ -125,8 +125,8 @@ const AboutSection: React.FC = () => {
               description={
                 <>
                   Développement d'un système ERP complet avec Angular 19.2.0 pour la logistique du dernier kilomètre. 
-                  Implémentation de composants Standalone, gestion d'état avec RxJS, et intégration PrimeNG/Tailwind CSS. 
-                  Création de modules Dashboard, Gestion Utilisateurs, Courses & Livraisons, et système POS.
+                  Déploiement sur Google Cloud Platform avec Cloud Functions et Cloud Run. Implémentation de notifications 
+                  Telegram automatisées, purge Firebase via Cloud Functions, et architecture serverless complète.
                 </>
               }
               isLeft={false}
