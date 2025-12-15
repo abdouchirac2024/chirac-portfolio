@@ -29,11 +29,11 @@ const EducationSection: React.FC = () => {
   
   const education = [
     {
-      degree: "Licence Professionnelle Métiers de l'Informatique et Applications Web",
-      institution: "IUT d'Evry Val d'Essonne (Délocalisé à Douala)",
+      degree: "Licence Professionnelle Métiers de l'Informatique et Applications Web (MIAW)",
+      institution: "IUT d'Evry Val d'Essonne (Délocalisé à Douala - INUBIL/ISTAMA)",
       year: "2023 - 2024",
       grade: "Mention Bien",
-      description: "Spécialité : Développement avancé d'applications web",
+      description: "Diplôme français remis par le Consulat de France à Douala. Spécialité : Développement avancé d'applications web, architecture moderne et frameworks JavaScript.",
       delay: 0,
     },
     {
@@ -66,7 +66,8 @@ const EducationSection: React.FC = () => {
 
   const formationImages = [
     '/images/formation1.jpg',
-    '/images/formation2.jpg'
+    '/images/formation2.jpg',
+    '/images/consulte-france.jpg'
   ];
 
   return (
@@ -99,24 +100,46 @@ const EducationSection: React.FC = () => {
         </div>
         <div className="overflow-x-hidden w-full mb-12">
           <div className="flex items-center gap-8 animate-marquee whitespace-nowrap" style={{animation: 'marquee 20s linear infinite'}}>
-            {formationImages.map((src, idx) => (
-              <img
-                key={idx}
-                src={src}
-                alt={`Formation ${idx + 1}`}
-                className="h-64 rounded-lg shadow-xl object-cover"
-                style={{ minWidth: '320px', maxWidth: '400px' }}
-              />
-            ))}
-            {formationImages.map((src, idx) => (
-              <img
-                key={idx + formationImages.length}
-                src={src}
-                alt={`Formation ${idx + 1}`}
-                className="h-64 rounded-lg shadow-xl object-cover"
-                style={{ minWidth: '320px', maxWidth: '400px' }}
-              />
-            ))}
+            {formationImages.map((src, idx) => {
+              const getAltText = (index: number) => {
+                switch(index) {
+                  case 0: return "Formation académique - Parcours universitaire";
+                  case 1: return "Études supérieures - Développement informatique";
+                  case 2: return "Remise de diplôme Licence Pro MIAW - IUT d'Évry par le Consulat de France à Douala";
+                  default: return `Formation ${index + 1}`;
+                }
+              };
+              
+              return (
+                <img
+                  key={idx}
+                  src={src}
+                  alt={getAltText(idx)}
+                  className="h-64 rounded-lg shadow-xl object-cover hover:scale-105 transition-transform duration-300"
+                  style={{ minWidth: '320px', maxWidth: '400px' }}
+                />
+              );
+            })}
+            {formationImages.map((src, idx) => {
+              const getAltText = (index: number) => {
+                switch(index) {
+                  case 0: return "Formation académique - Parcours universitaire";
+                  case 1: return "Études supérieures - Développement informatique";
+                  case 2: return "Remise de diplôme Licence Pro MIAW - IUT d'Évry par le Consulat de France à Douala";
+                  default: return `Formation ${index + 1}`;
+                }
+              };
+              
+              return (
+                <img
+                  key={idx + formationImages.length}
+                  src={src}
+                  alt={getAltText(idx)}
+                  className="h-64 rounded-lg shadow-xl object-cover hover:scale-105 transition-transform duration-300"
+                  style={{ minWidth: '320px', maxWidth: '400px' }}
+                />
+              );
+            })}
           </div>
           <style>{`
             @keyframes marquee {
