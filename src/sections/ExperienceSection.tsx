@@ -1,11 +1,13 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { Briefcase, Calendar, TrendingUp } from 'lucide-react';
+import { Briefcase, Calendar, TrendingUp, ChevronDown, ChevronUp } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import { experiences } from '../data/experiences';
 import ExperienceCard from '../components/ExperienceCard';
 
 const ExperienceSection: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
+  const [showAll, setShowAll] = useState(false);
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -65,20 +67,58 @@ const ExperienceSection: React.FC = () => {
         </div>
 
         {experiences && experiences.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
-            {experiences.map((exp, index) => (
-              <div
-                key={`${exp.company}-${exp.title}-${index}`}
-                className={`opacity-0 ${visible ? 'animate-fade-in' : ''}`}
-                style={{ animationDelay: `${(index + 1) * 200}ms` }}
-              >
-                <ExperienceCard
-                  experience={exp}
-                  delay={0} // Animation handled by parent
-                />
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+              {experiences.slice(0, showAll ? experiences.length : 3).map((exp, index) => (
+                <div
+                  key={`${exp.company}-${exp.title}-${index}`}
+                  className={`transition-all duration-500 ${
+                    visible 
+                      ? 'opacity-100 translate-y-0' 
+                      : 'opacity-0 translate-y-4'
+                  } ${
+                    index >= 3 && showAll 
+                      ? 'animate-fade-in' 
+                      : ''
+                  }`}
+                  style={{ 
+                    animationDelay: index < 3 
+                      ? `${(index + 1) * 200}ms` 
+                      : `${(index - 2) * 150}ms`
+                  }}
+                >
+                  <ExperienceCard
+                    experience={exp}
+                    delay={0} // Animation handled by parent
+                  />
+                </div>
+              ))}
+            </div>
+            
+            {experiences.length > 3 && (
+              <div className={`mt-8 sm:mt-12 text-center opacity-0 ${visible ? 'animate-fade-in' : ''}`} 
+                   style={{ animationDelay: `${Math.min(4, experiences.length + 1) * 200}ms` }}>
+                <Button
+                  onClick={() => setShowAll(!showAll)}
+                  variant="outline"
+                  size="lg"
+                  className="group px-6 sm:px-8 py-3 sm:py-4 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                >
+                  {showAll ? (
+                    <>
+                      <span className="text-sm sm:text-base">Voir moins</span>
+                      <ChevronUp className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:-translate-y-1 transition-transform duration-300" />
+                    </>
+                  ) : (
+                    <>
+                      <span className="text-sm sm:text-base">Voir toutes les expériences ({experiences.length})</span>
+                      <ChevronDown className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-y-1 transition-transform duration-300" />
+                    </>
+                  )}
+                </Button>
               </div>
-            ))}
-          </div>
+            )}
+          </>
         ) : (
           <div className="text-center py-16">
             <div className="glass p-8 rounded-lg max-w-md mx-auto">
@@ -93,7 +133,7 @@ const ExperienceSection: React.FC = () => {
 
         {experiences.length > 0 && (
           <div className={`mt-12 sm:mt-16 lg:mt-20 text-center opacity-0 ${visible ? 'animate-fade-in' : ''}`} 
-               style={{ animationDelay: `${(experiences.length + 1) * 200}ms` }}>
+               style={{ animationDelay: `${(showAll ? experiences.length + 2 : 5) * 200}ms` }}>
             <div className="glass p-4 sm:p-6 rounded-lg inline-block">
               <p className="text-muted-foreground text-sm sm:text-base">
                 Intéressé par mon profil ? 
