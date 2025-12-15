@@ -37,7 +37,7 @@ const ExperienceSection: React.FC = () => {
 
   return (
     <section id="experience" ref={sectionRef} className="py-12 sm:py-16 md:py-20 lg:py-24 bg-muted/10">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className={`text-center mb-12 sm:mb-16 lg:mb-20 opacity-0 ${visible ? 'animate-fade-in' : ''}`}>
           <div className="flex items-center justify-center gap-2 sm:gap-3 mb-4 sm:mb-6">
             <Briefcase className="w-6 h-6 sm:w-8 sm:h-8 text-primary flex-shrink-0" />
@@ -65,7 +65,7 @@ const ExperienceSection: React.FC = () => {
         </div>
 
         {experiences && experiences.length > 0 ? (
-          <div className="space-y-6 sm:space-y-8 lg:space-y-10 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
             {experiences.map((exp, index) => (
               <div
                 key={`${exp.company}-${exp.title}-${index}`}
@@ -92,10 +92,10 @@ const ExperienceSection: React.FC = () => {
         )}
 
         {experiences.length > 0 && (
-          <div className={`mt-16 text-center opacity-0 ${visible ? 'animate-fade-in' : ''}`} 
+          <div className={`mt-12 sm:mt-16 lg:mt-20 text-center opacity-0 ${visible ? 'animate-fade-in' : ''}`} 
                style={{ animationDelay: `${(experiences.length + 1) * 200}ms` }}>
-            <div className="glass p-6 rounded-lg inline-block">
-              <p className="text-muted-foreground">
+            <div className="glass p-4 sm:p-6 rounded-lg inline-block">
+              <p className="text-muted-foreground text-sm sm:text-base">
                 Intéressé par mon profil ? 
                 <a href="#contact" className="text-primary hover:underline ml-1">
                   Contactez-moi

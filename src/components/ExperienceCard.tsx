@@ -65,7 +65,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, delay = 0 }
       ref={cardRef}
       className={`group rounded-xl overflow-hidden glass transition-all duration-500 ease-out opacity-0 ${
         visible ? 'animate-zoom-in opacity-100' : ''
-      } hover:shadow-2xl border border-white/10 bg-gradient-to-br from-slate-800/50 to-slate-900/50 w-full`}
+      } hover:shadow-2xl border border-white/10 bg-gradient-to-br from-slate-800/50 to-slate-900/50 w-full h-full flex flex-col`}
     >
       {experience.logoUrl && (
         <div className="h-24 sm:h-28 md:h-32 flex items-center justify-center bg-gradient-to-r from-primary/10 to-primary/5 p-3 sm:p-4">
@@ -77,7 +77,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, delay = 0 }
         </div>
       )}
       
-      <div className="p-4 sm:p-5 md:p-6">
+      <div className="p-4 sm:p-5 md:p-6 flex-1 flex flex-col">
         <div className="flex items-start justify-between mb-4 sm:mb-6">
           <div className="flex-1">
             <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-2 text-white group-hover:text-primary transition-colors leading-tight">
@@ -187,13 +187,13 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, delay = 0 }
         )}
 
         {experience.technologies && experience.technologies.length > 0 && (
-          <div>
+          <div className="mt-auto">
             <h4 className="text-xs sm:text-sm font-semibold text-slate-200 mb-2 sm:mb-3 flex items-center gap-2">
               <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-orange-500 rounded-full flex-shrink-0"></span>
               Technologies Utilisées
             </h4>
             <div className="flex flex-wrap gap-1.5 sm:gap-2">
-              {experience.technologies.map((tech, index) => (
+              {experience.technologies.slice(0, expanded ? undefined : 6).map((tech, index) => (
                 <span
                   key={index}
                   className="px-2 sm:px-3 py-1 sm:py-1.5 text-xs rounded-full bg-primary/10 text-primary border border-primary/30 hover:bg-primary/20 transition-colors font-medium whitespace-nowrap"
@@ -201,6 +201,11 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, delay = 0 }
                   {tech}
                 </span>
               ))}
+              {experience.technologies.length > 6 && !expanded && (
+                <span className="px-2 sm:px-3 py-1 sm:py-1.5 text-xs rounded-full bg-slate-700/50 text-slate-400 border border-slate-600/30 font-medium">
+                  +{experience.technologies.length - 6}
+                </span>
+              )}
             </div>
           </div>
         )}
