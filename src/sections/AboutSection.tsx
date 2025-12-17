@@ -63,16 +63,31 @@ const AboutSection: React.FC = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-center">
           <div className={`opacity-0 ${visible ? 'animate-fade-in' : ''} order-2 lg:order-1`}>
-            <div className="relative max-w-md mx-auto lg:max-w-none">
-              <div className="w-full h-64 sm:h-72 md:h-80 lg:h-96 rounded-xl overflow-hidden shadow-2xl">
+            <div className="relative max-w-md mx-auto lg:max-w-none group">
+              <div className="w-full h-64 sm:h-72 md:h-80 lg:h-96 rounded-xl overflow-hidden shadow-2xl transform transition-all duration-700 hover:scale-105 hover:rotate-1 hover:shadow-3xl">
                 <img 
                   src="/images/d6a9ce7d-c905-40e5-b74f-232a1aae62ec.png" 
                   alt="Chirac NJUTAPMVOUI" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-all duration-700 hover:scale-110 filter hover:brightness-110 hover:contrast-105"
                 />
+                {/* Overlay gradient animé */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                {/* Effet de brillance qui traverse l'image */}
+                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12"></div>
               </div>
-              <div className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 bg-primary/10 rounded-full -z-10"></div>
-              <div className="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-primary/10 rounded-full -z-10"></div>
+              
+              {/* Cercles décoratifs animés */}
+              <div className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 bg-primary/10 rounded-full -z-10 animate-pulse-slow"></div>
+              <div className="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-primary/10 rounded-full -z-10 animate-bounce-slow"></div>
+              
+              {/* Particules flottantes */}
+              <div className="absolute top-1/4 -right-2 w-2 h-2 bg-primary/40 rounded-full animate-float-1"></div>
+              <div className="absolute top-1/2 -left-3 w-1.5 h-1.5 bg-primary/30 rounded-full animate-float-2"></div>
+              <div className="absolute bottom-1/3 -right-4 w-1 h-1 bg-primary/50 rounded-full animate-float-3"></div>
+              
+              {/* Bordure animée */}
+              <div className="absolute inset-0 rounded-xl border-2 border-primary/0 group-hover:border-primary/30 transition-all duration-500 animate-border-glow"></div>
             </div>
           </div>
           

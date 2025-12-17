@@ -65,15 +65,17 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, delay = 0 }
       ref={cardRef}
       className={`group rounded-xl overflow-hidden glass transition-all duration-500 ease-out opacity-0 ${
         visible ? 'animate-zoom-in opacity-100' : ''
-      } hover:shadow-2xl border border-white/10 bg-gradient-to-br from-slate-800/50 to-slate-900/50 w-full h-full flex flex-col`}
+      } hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 hover:scale-105 border border-white/10 bg-gradient-to-br from-slate-800/50 to-slate-900/50 w-full h-full flex flex-col transform`}
     >
       {experience.logoUrl && (
-        <div className="h-24 sm:h-28 md:h-32 flex items-center justify-center bg-gradient-to-r from-primary/10 to-primary/5 p-3 sm:p-4">
+        <div className="h-24 sm:h-28 md:h-32 flex items-center justify-center bg-gradient-to-r from-primary/10 to-primary/5 p-3 sm:p-4 relative overflow-hidden">
           <img
             src={experience.logoUrl}
             alt={`${experience.company} logo`}
-            className="max-h-full max-w-[80px] sm:max-w-[100px] md:max-w-[120px] object-contain rounded-md"
+            className="max-h-full max-w-[80px] sm:max-w-[100px] md:max-w-[120px] object-contain rounded-md transition-all duration-300 group-hover:scale-110 group-hover:brightness-110"
           />
+          {/* Effet de brillance sur le logo */}
+          <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
         </div>
       )}
       
