@@ -37,7 +37,7 @@ export const experiences: WorkExperience[] = [
       "jsPDF",
       "Excel (xlsx)"
     ],
-    logoUrl: "https://multicanalservices.com/wp-content/uploads/2018/10/logo.png",
+    logoUrl: "/images/multicanalservice.jpeg",
     projectDetails: {
       description: "Système ERP complet pour la gestion logistique avec modules interconnectés",
       keyFeatures: [
@@ -118,7 +118,7 @@ export const experiences: WorkExperience[] = [
       "Bootstrap",
       "Git"
     ],
-    logoUrl: "/images/adaa-logo.png",
+    logoUrl: "/images/adaa.jpeg",
     projectDetails: {
       description: "Développement de plateformes éducatives et de recrutement",
       keyFeatures: [
