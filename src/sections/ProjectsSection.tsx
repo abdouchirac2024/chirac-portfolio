@@ -4,30 +4,39 @@ import ProjectCard from '../components/ProjectCard';
 const projects = [
   {
     id: 1,
+    title: "Système ERP Livraison Express",
+    description: "Système ERP complet pour la logistique du dernier kilomètre avec Angular 19.2.0, déployé sur Google Cloud Platform avec Cloud Functions et notifications Telegram automatisées.",
+    stack: ["Angular 19.2.0", "PrimeNG", "Google Cloud", "Cloud Functions", "Firebase", "Telegram API"],
+    imageUrl: "/images/livraisonexpres.png",
+    liveUrl: "#", // Projet interne, pas de lien public
+    delay: 0,
+  },
+  {
+    id: 2,
     title: "Congrès Adna Ndogbatjeck",
     description: "Plateforme de gestion d'événements avec système d'intégration continue",
     stack: ["Laravel", "Vue.js 3", "Tailwind CSS", "CI/CD", "Gitea", "SonarQube"],
     imageUrl: "/images/d5b56b19-946f-4854-a490-3256906951b3.png",
     liveUrl: "https://mangog2025.congresadnandogbatjeck.com/",
-    delay: 0,
+    delay: 200,
   },
   {
-    id: 2,
+    id: 3,
     title: "Application de Gestion de Dépenses",
     description: "Une application web moderne pour suivre et gérer les dépenses personnelles avec des graphiques interactifs.",
     stack: ["React", "TypeScript", "TailwindCSS", "Recharts"],
     imageUrl: "/images/expense-tracker.png",
     liveUrl: "https://expense-tracker-demo.com",
-    delay: 200,
+    delay: 400,
   },
   {
-    id: 3,
+    id: 4,
     title: "Africa Unity",
     description: "Plateforme de mise en relation professionnelle pour l'Afrique",
     stack: ["Vue.js 3", "Laravel", "MySQL"],
     imageUrl: "/images/90befa0a-f912-4893-b0b2-6f0309546b10.png",
     liveUrl: "https://africaunity.net",
-    delay: 400,
+    delay: 600,
   },
 ];
 
@@ -35,7 +44,7 @@ const ProjectsSection: React.FC = () => {
   const [filter, setFilter] = useState<string | null>(null);
   
   const techFilters = [
-    "Tous", "React.js", "Vue.js 3", "Laravel", "Node.js", "MongoDB"
+    "Tous", "Angular", "React.js", "Vue.js 3", "Laravel", "Google Cloud", "Firebase"
   ];
   
   const filteredProjects = filter && filter !== "Tous"
