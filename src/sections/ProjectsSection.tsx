@@ -8,7 +8,7 @@ const projects = [
     description: "Système ERP complet pour la logistique du dernier kilomètre avec Angular 19.2.0, déployé sur Google Cloud Platform avec Cloud Functions et notifications Telegram automatisées.",
     stack: ["Angular 19.2.0", "PrimeNG", "Google Cloud", "Cloud Functions", "Firebase", "Telegram API"],
     imageUrl: "/images/livraisonexpres.png",
-    liveUrl: "#", // Projet interne, pas de lien public
+    liveUrl: "https://console.v2.firestore.livraison-express.net/",
     delay: 0,
   },
   {

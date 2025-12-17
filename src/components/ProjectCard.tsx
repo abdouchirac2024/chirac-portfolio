@@ -73,7 +73,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           ))}
         </div>
         
-        {liveUrl && liveUrl !== "#" ? (
+        {liveUrl && (
           <Button 
             asChild 
             variant="outline"
@@ -83,15 +83,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               Voir le projet
             </a>
           </Button>
-        ) : liveUrl === "#" ? (
-          <Button 
-            variant="outline"
-            className="mt-2 w-full opacity-60 cursor-not-allowed"
-            disabled
-          >
-            Projet interne - Multi Canal Service
-          </Button>
-        ) : null}
+        )}
       </div>
     </div>
   );
