@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import ProjectCard from '../components/ProjectCard';
 
 const projects = [
@@ -42,6 +44,7 @@ const projects = [
 
 const ProjectsSection: React.FC = () => {
   const [filter, setFilter] = useState<string | null>(null);
+  const [showAll, setShowAll] = useState(false);
   
   const techFilters = [
     "Tous", "Angular", "React.js", "Vue.js 3", "Laravel", "Google Cloud", "Firebase"
@@ -50,6 +53,8 @@ const ProjectsSection: React.FC = () => {
   const filteredProjects = filter && filter !== "Tous"
     ? projects.filter(project => project.stack.some(tech => tech.includes(filter)))
     : projects;
+    
+  const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 3);
 
   return (
     <section id="projects" className="py-20">
@@ -60,10 +65,13 @@ const ProjectsSection: React.FC = () => {
           {techFilters.map(tech => (
             <button
               key={tech}
-              onClick={() => setFilter(tech === "Tous" ? null : tech)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+              onClick={() => {
+                setFilter(tech === "Tous" ? null : tech);
+                setShowAll(false); // Reset to show only 3 projects when filter changes
+              }}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${
                 (tech === "Tous" && !filter) || tech === filter 
-                  ? 'bg-primary text-white'
+                  ? 'bg-primary text-white shadow-lg'
                   : 'bg-secondary hover:bg-primary/20'
               }`}
             >
@@ -73,7 +81,7 @@ const ProjectsSection: React.FC = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project) => (
+          {displayedProjects.map((project, index) => (
             <ProjectCard
               key={project.id}
               title={project.title}
@@ -81,10 +89,33 @@ const ProjectsSection: React.FC = () => {
               stack={project.stack}
               imageUrl={project.imageUrl}
               liveUrl={project.liveUrl}
-              delay={project.delay}
+              delay={index < 3 ? project.delay : (index - 2) * 150}
             />
           ))}
         </div>
+        
+        {filteredProjects.length > 3 && (
+          <div className="mt-12 text-center">
+            <Button
+              onClick={() => setShowAll(!showAll)}
+              variant="outline"
+              size="lg"
+              className="group px-6 sm:px-8 py-3 sm:py-4 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+            >
+              {showAll ? (
+                <>
+                  <span className="text-sm sm:text-base">Voir moins de projets</span>
+                  <ChevronUp className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:-translate-y-1 transition-transform duration-300" />
+                </>
+              ) : (
+                <>
+                  <span className="text-sm sm:text-base">Voir plus de projets ({filteredProjects.length - 3} autres)</span>
+                  <ChevronDown className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-y-1 transition-transform duration-300" />
+                </>
+              )}
+            </Button>
+          </div>
+        )}
         
         {filteredProjects.length === 0 && (
           <div className="text-center py-8 text-muted-foreground">
