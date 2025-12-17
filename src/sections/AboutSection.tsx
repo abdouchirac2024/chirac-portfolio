@@ -29,17 +29,17 @@ const AboutSection: React.FC = () => {
   }, []);
   
   const skills = [
-    { name: 'Angular 19+', percentage: 85, delay: 0 },
-    { name: 'Google Cloud Platform', percentage: 80, delay: 100 },
-    { name: 'Cloud Functions', percentage: 85, delay: 200 },
+    { name: 'Angular 19+', percentage: 75, delay: 0 },
+    { name: 'Google Cloud Platform', percentage: 60, delay: 100 },
+    { name: 'Cloud Functions', percentage: 65, delay: 200 },
     { name: 'Cloud Run', percentage: 80, delay: 300 },
-    { name: 'Firebase', percentage: 75, delay: 400 },
-    { name: 'React.js', percentage: 80, delay: 500 },
+    { name: 'Firebase', percentage: 55, delay: 400 },
+    { name: 'React.js', percentage: 70, delay: 500 },
     { name: 'Vue.js', percentage: 75, delay: 600 },
     { name: 'Laravel', percentage: 85, delay: 700 },
-    { name: 'TypeScript', percentage: 90, delay: 800 },
-    { name: 'Telegram Bot API', percentage: 70, delay: 900 },
-    { name: 'Tailwind CSS', percentage: 90, delay: 1000 },
+    { name: 'TypeScript', percentage: 70, delay: 800 },
+    { name: 'Telegram Bot API', percentage: 90, delay: 900 },
+    { name: 'Tailwind CSS', percentage: 60, delay: 1000 },
     { name: 'RxJS', percentage: 75, delay: 1100 },
   ];
 
