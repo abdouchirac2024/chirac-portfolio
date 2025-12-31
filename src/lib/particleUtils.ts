@@ -1,11 +1,3 @@
-import { type ClassValue, clsx } from "clsx"
-import { twMerge } from "tailwind-merge"
-
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
-}
-
-// Ajout des fonctions pour l'animation 3D
 const MIN_RADIUS = 7.5;
 const MAX_RADIUS = 15;
 const DEPTH = 2;
@@ -17,17 +9,17 @@ const NUM_POINTS = 2500;
  * --- Credit ---
  * https://stackoverflow.com/questions/16360533/calculate-color-hex-having-2-colors-and-percent-position
  */
-const getGradientStop = (ratio: number) => {
+const getGradientStop = (ratio) => {
     // For outer ring numbers potentially past max radius,
     // just clamp to 0
     ratio = ratio > 1 ? 1 : ratio < 0 ? 0 : ratio;
 
-    const c0 = LEFT_COLOR.match(/.{1,2}/g)?.map(
+    const c0 = LEFT_COLOR.match(/.{1,2}/g).map(
     (oct) => parseInt(oct, 16) * (1 - ratio)
-    ) || [];
-    const c1 = RIGHT_COLOR.match(/.{1,2}/g)?.map(
+    );
+    const c1 = RIGHT_COLOR.match(/.{1,2}/g).map(
     (oct) => parseInt(oct, 16) * ratio
-    ) || [];
+    );
     const ci = [0, 1, 2].map((i) => Math.min(Math.round(c0[i] + c1[i]), 255));
     const color = ci
     .reduce((a, v) => (a << 8) + v, 0)
@@ -37,7 +29,7 @@ const getGradientStop = (ratio: number) => {
     return `#${color}`;
 };
 
-const calculateColor = (x: number) => {
+const calculateColor = (x) => {
     const maxDiff = MAX_RADIUS * 2;
     const distance = x + MAX_RADIUS;
 
@@ -47,7 +39,7 @@ const calculateColor = (x: number) => {
     return stop;
 };
 
-const randomFromInterval = (min: number, max: number) => {
+const randomFromInterval = (min, max) => {
     return Math.random() * (max - min) + min;
 };
 
@@ -66,7 +58,7 @@ export const pointsInner = Array.from(
 
     return {
     idx: num,
-    position: [x, y, z] as [number, number, number],
+    position: [x, y, z],
     color,
     };
 });
@@ -86,7 +78,7 @@ export const pointsOuter = Array.from(
 
     return {
     idx: num,
-    position: [x, y, z] as [number, number, number],
+    position: [x, y, z],
     color,
     };
 });

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import ParticleBackground from '../components/ParticleBackground';
+import ParticleBackgroundSafe from '../components/ParticleBackgroundSafe';
 import HeroSection from '../sections/HeroSection';
 import AboutSection from '../sections/AboutSection';
 import ProjectsSection from '../sections/ProjectsSection';
@@ -33,7 +33,7 @@ const Index: React.FC = () => {
 
   return (
     <>
-      <ParticleBackground />
+      <ParticleBackgroundSafe />
       <CustomCursor />
       <Header />
       <main>
