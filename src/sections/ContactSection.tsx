@@ -8,16 +8,17 @@ const ContactSection: React.FC = () => {
     <section id="contact" className="py-20 relative overflow-hidden">
       <div className="container relative z-10">
         <h2 className="section-title">Contact</h2>
-        
+
         <div className="max-w-3xl mx-auto">
           <Card className="glass border-none shadow-lg p-6 md:p-8">
             <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
               <div>
-                <h3 className="text-xl font-bold mb-4">Me contacter</h3>
+                <h3 className="text-xl font-bold mb-4">Parlons de votre projet</h3>
                 <p className="text-muted-foreground mb-6">
-                  Vous avez un projet en tête ou souhaitez discuter d'une opportunité ? N'hésitez pas à me contacter !
+                  Vous cherchez un développeur Front-End capable de transformer vos designs en interfaces performantes ?
+                  Ou un Full Stack pour construire votre MVP ? Discutons de comment je peux aider votre équipe.
                 </p>
-                
+
                 <div className="space-y-4">
                   <div>
                     <p className="text-sm font-medium">Email</p>
@@ -25,14 +26,14 @@ const ContactSection: React.FC = () => {
                       abdouchirac411@gmail.com
                     </a>
                   </div>
-                  
+
                   <div>
                     <p className="text-sm font-medium">Téléphone</p>
                     <a href="tel:+237658488485" className="text-primary hover:underline">
                       +237 658 488 485
                     </a>
                   </div>
-                  
+
                   <div>
                     <p className="text-sm font-medium">Localisation</p>
                     <p>Cameroun</p>
@@ -51,7 +52,7 @@ const ContactSection: React.FC = () => {
                   </div>
                 </div>
               </div>
-              
+
               <div>
                 <ContactForm />
               </div>
@@ -59,7 +60,7 @@ const ContactSection: React.FC = () => {
           </Card>
         </div>
       </div>
-      
+
       {/* Wave SVG background */}
       <div className="absolute bottom-0 left-0 w-full opacity-20">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="fill-primary">

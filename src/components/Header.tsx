@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,6 +14,25 @@ const Header: React.FC = () => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    document.querySelectorAll('section[id]').forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   const navLinks = [
@@ -26,43 +46,57 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <header 
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'py-2 sm:py-3 bg-background/80 backdrop-blur-md border-b' 
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled
+          ? 'py-2 sm:py-3 bg-background/80 backdrop-blur-md border-b shadow-sm'
           : 'py-3 sm:py-4 bg-transparent'
-      }`}
+        }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        <a href="#home" className="text-lg sm:text-xl lg:text-2xl font-bold font-poppins flex-shrink-0">
-          <span className="text-primary">Chirac</span>
-          <span>.dev</span>
+        <a href="#home" className="text-lg sm:text-xl lg:text-2xl font-bold font-poppins flex-shrink-0 group">
+          <span className="text-primary group-hover:text-primary/80 transition-colors">Chirac</span>
+          <span className="group-hover:text-foreground/80 transition-colors">.dev</span>
         </a>
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="px-3 xl:px-4 py-2 text-sm xl:text-base font-medium rounded-md hover:bg-secondary transition-colors whitespace-nowrap"
-            >
-              {link.title}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.href.substring(1);
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                className={`relative px-3 xl:px-4 py-2 text-sm xl:text-base font-medium rounded-md transition-all duration-300 whitespace-nowrap ${isActive
+                    ? 'text-primary font-semibold'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-secondary/50'
+                  }`}
+              >
+                {link.title}
+                {isActive && (
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary rounded-full animate-fade-in" />
+                )}
+              </a>
+            );
+          })}
         </nav>
 
         {/* Tablet Navigation */}
         <nav className="hidden md:flex lg:hidden items-center space-x-1">
-          {navLinks.slice(0, 5).map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="px-2 py-2 text-xs font-medium rounded-md hover:bg-secondary transition-colors"
-            >
-              {link.title}
-            </a>
-          ))}
+          {navLinks.slice(0, 5).map((link) => {
+            const isActive = activeSection === link.href.substring(1);
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                className={`px-2 py-2 text-xs font-medium rounded-md transition-colors ${isActive
+                    ? 'text-primary bg-secondary/50'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-secondary/30'
+                  }`}
+              >
+                {link.title}
+              </a>
+            );
+          })}
           <Button
             variant="ghost"
             size="sm"
@@ -112,18 +146,25 @@ const Header: React.FC = () => {
 
       {/* Mobile/Tablet Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-background/95 backdrop-blur-md border-b shadow-lg">
+        <div className="lg:hidden absolute top-full left-0 w-full bg-background/95 backdrop-blur-md border-b shadow-lg animate-in slide-in-from-top-5">
           <div className="container mx-auto px-4 sm:px-6 py-4 flex flex-col space-y-1">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="px-4 py-3 text-sm sm:text-base hover:bg-secondary rounded-lg transition-colors font-medium"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {link.title}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = activeSection === link.href.substring(1);
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={`px-4 py-3 text-sm sm:text-base rounded-lg transition-colors font-medium flex items-center justify-between ${isActive
+                      ? 'bg-primary/10 text-primary'
+                      : 'hover:bg-secondary text-muted-foreground hover:text-foreground'
+                    }`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.title}
+                  {isActive && <div className="w-1.5 h-1.5 rounded-full bg-primary" />}
+                </a>
+              );
+            })}
           </div>
         </div>
       )}
