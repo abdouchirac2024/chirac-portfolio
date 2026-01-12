@@ -1,7 +1,9 @@
 import React, { useRef, useEffect, useState } from 'react';
 import SkillBar from '../components/SkillBar';
+import SkillCategory from '../components/SkillCategory';
 import TimelineItem from '../components/TimelineItem';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { Code2, Server, Cloud, Wrench } from 'lucide-react';
 
 const AboutSection: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -28,19 +30,52 @@ const AboutSection: React.FC = () => {
     };
   }, []);
 
-  const skills = [
-    { name: 'Angular 19+', percentage: 75, delay: 0 },
-    { name: 'Google Cloud Platform', percentage: 60, delay: 100 },
-    { name: 'Cloud Functions', percentage: 65, delay: 200 },
-    { name: 'Cloud Run', percentage: 80, delay: 300 },
-    { name: 'Firebase', percentage: 55, delay: 400 },
-    { name: 'React.js', percentage: 70, delay: 500 },
-    { name: 'Vue.js', percentage: 75, delay: 600 },
-    { name: 'Laravel', percentage: 85, delay: 700 },
-    { name: 'TypeScript', percentage: 70, delay: 800 },
-    { name: 'Telegram Bot API', percentage: 90, delay: 900 },
-    { name: 'Tailwind CSS', percentage: 60, delay: 1000 },
-    { name: 'RxJS', percentage: 75, delay: 1100 },
+  const skillCategories = [
+    {
+      title: "Frontend",
+      icon: Code2,
+      skills: [
+        { name: 'Angular 19+', percentage: 90 },
+        { name: 'React.js', percentage: 85 },
+        { name: 'Vue.js', percentage: 80 },
+        { name: 'TypeScript', percentage: 85 },
+        { name: 'Tailwind CSS', percentage: 90 },
+        { name: 'RxJS', percentage: 75 },
+      ]
+    },
+    {
+      title: "Backend",
+      icon: Server,
+      skills: [
+        { name: 'Laravel', percentage: 85 },
+        { name: 'Node.js', percentage: 80 },
+        { name: 'Express.js', percentage: 80 },
+        { name: 'PHP', percentage: 85 },
+        { name: 'MySQL / MongoDB', percentage: 80 },
+      ]
+    },
+    {
+      title: "Cloud & DevOps",
+      icon: Cloud,
+      skills: [
+        { name: 'Google Cloud Platform', percentage: 75 },
+        { name: 'Cloud Functions', percentage: 80 },
+        { name: 'Cloud Run', percentage: 80 },
+        { name: 'Firebase', percentage: 85 },
+        { name: 'Docker', percentage: 70 },
+      ]
+    },
+    {
+      title: "Outils & Autres",
+      icon: Wrench,
+      skills: [
+        { name: 'Telegram Bot API', percentage: 90 },
+        { name: 'Git / GitHub', percentage: 90 },
+        { name: 'Figma', percentage: 75 },
+        { name: 'Postman', percentage: 85 },
+        { name: 'Agile / Scrum', percentage: 80 },
+      ]
+    }
   ];
 
   const aboutContent = {
@@ -112,20 +147,27 @@ const AboutSection: React.FC = () => {
               </p>
             </div>
 
-            <div className={`mt-6 sm:mt-8 md:mt-10 lg:mt-12 opacity-0 ${visible ? 'animate-fade-in' : ''
-              }`} style={{ animationDelay: '0.4s' }}>
-              <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6">Compétences</h3>
-              <div className="grid grid-cols-1 gap-x-4 sm:gap-x-6 md:gap-x-8">
-                {skills.map((skill) => (
-                  <SkillBar
-                    key={skill.name}
-                    name={skill.name}
-                    percentage={skill.percentage}
-                    delay={skill.delay}
-                  />
-                ))}
-              </div>
-            </div>
+          </div>
+        </div>
+
+        <div className={`mt-16 sm:mt-20 opacity-0 ${visible ? 'animate-fade-in' : ''}`} style={{ animationDelay: '0.4s' }}>
+          <div className="text-center mb-12">
+            <h3 className="text-2xl sm:text-3xl font-bold mb-4">Mes Compétences</h3>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Une vue d'ensemble de mon expertise technique, organisée par domaines de spécialisation.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+            {skillCategories.map((category, index) => (
+              <SkillCategory
+                key={category.title}
+                title={category.title}
+                icon={category.icon}
+                skills={category.skills}
+                delay={index * 150}
+              />
+            ))}
           </div>
         </div>
 
