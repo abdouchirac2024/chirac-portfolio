@@ -61,14 +61,14 @@ const AboutSection: React.FC = () => {
       <div className="container">
         <h2 className="section-title">À Propos</h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-start">
           <div className={`opacity-0 ${visible ? 'animate-fade-in' : ''} order-2 lg:order-1`}>
             <div className="relative max-w-md mx-auto lg:max-w-none group">
-              <div className="w-full h-64 sm:h-72 md:h-80 lg:h-96 rounded-xl overflow-hidden shadow-2xl transform transition-all duration-700 hover:scale-105 hover:rotate-1 hover:shadow-3xl">
+              <div className="w-full aspect-[4/5] sm:aspect-square lg:aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-700 hover:scale-[1.02] hover:shadow-primary/20 hover:shadow-3xl border border-white/10">
                 <img
                   src="/images/d6a9ce7d-c905-40e5-b74f-232a1aae62ec.png"
                   alt="Chirac NJUTAPMVOUI"
-                  className="w-full h-full object-cover transition-all duration-700 hover:scale-110 filter hover:brightness-110 hover:contrast-105"
+                  className="w-full h-full object-cover transition-all duration-700 hover:scale-110 filter hover:brightness-110"
                 />
                 {/* Overlay gradient animé */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -92,9 +92,9 @@ const AboutSection: React.FC = () => {
           </div>
 
           <div className="order-1 lg:order-2">
-            <div className={`glass p-4 sm:p-5 md:p-6 lg:p-8 rounded-xl shadow-lg opacity-0 ${visible ? 'animate-fade-in' : ''
+            <div className={`glass p-6 sm:p-8 md:p-10 rounded-2xl shadow-xl border border-white/10 opacity-0 ${visible ? 'animate-fade-in' : ''
               }`} style={{ animationDelay: '0.2s' }}>
-              <h3 className="responsive-heading mb-4 sm:mb-6">Plus qu'un développeur, un créateur de solutions</h3>
+              <h3 className="text-2xl sm:text-3xl font-bold mb-6 bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent">Plus qu'un développeur, un créateur de solutions</h3>
               <p className="mb-4 sm:mb-6 responsive-text">
                 Je suis <strong>NJUTAPMVOUI Abdou Arahamanou Chirac</strong>, un développeur passionné par l'intersection entre
                 design et technologie. Mon objectif n'est pas seulement d'écrire du code, mais de créer des expériences numériques
@@ -143,6 +143,7 @@ const AboutSection: React.FC = () => {
                 </>
               }
               isLeft={false}
+              logoUrl="/images/multicanalservice.jpeg"
             />
             <TimelineItem
               year="2024 - 2025"
@@ -155,6 +156,7 @@ const AboutSection: React.FC = () => {
                 </>
               }
               isLeft={true}
+              logoUrl="/images/logo_daviinci.jpeg"
             />
             <TimelineItem
               year="2023 - 2024"
@@ -183,6 +185,7 @@ const AboutSection: React.FC = () => {
                 </>
               }
               isLeft={false}
+              logoUrl="/images/adaa.jpeg"
             />
             <TimelineItem
               year="2022 - 2023"
@@ -203,6 +206,7 @@ const AboutSection: React.FC = () => {
                 </>
               }
               isLeft={true}
+              logoUrl="/images/geno-logo.png"
             />
           </div>
         </div>

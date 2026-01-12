@@ -80,7 +80,7 @@ export const experiences: WorkExperience[] = [
       "OAuth",
       "Figma"
     ],
-    logoUrl: "/images/davinci-logo.png",
+    logoUrl: "/images/logo_daviinci.jpeg",
     projectDetails: {
       description: "Développement d'applications web modernes avec stack MERN et Laravel/Vue.js",
       keyFeatures: [
