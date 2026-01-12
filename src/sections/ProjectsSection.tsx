@@ -37,7 +37,7 @@ const projects = [
     result: "Interface intuitive permettant une analyse rapide des habitudes de dépenses.",
     stack: ["React", "TypeScript", "TailwindCSS", "Recharts"],
     imageUrl: "/images/expense-tracker.png",
-    liveUrl: "https://expense-tracker-demo.com",
+    liveUrl: "https://expense-davincit.vercel.app/",
     delay: 400,
   },
   {
@@ -83,8 +83,8 @@ const ProjectsSection: React.FC = () => {
                 setShowAll(false); // Reset to show only 3 projects when filter changes
               }}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 ${(tech === "Tous" && !filter) || tech === filter
-                  ? 'bg-primary text-white shadow-lg shadow-primary/25'
-                  : 'bg-secondary/50 hover:bg-primary/20 border border-transparent hover:border-primary/20'
+                ? 'bg-primary text-white shadow-lg shadow-primary/25'
+                : 'bg-secondary/50 hover:bg-primary/20 border border-transparent hover:border-primary/20'
                 }`}
             >
               {tech}
