@@ -46,22 +46,24 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
       className={`flex ${isLeft ? 'md:flex-row-reverse' : 'md:flex-row'} mb-10 opacity-0 ${visible ? 'animate-fade-in' : ''
         }`}
     >
-      <div className={`w-full md:w-1/2 ${isLeft ? 'md:pl-8' : 'md:pr-8'} md:text-${isLeft ? 'left' : 'right'}`}>
-        <div className="p-4 glass rounded-lg shadow-lg">
-          <div className="flex items-center gap-4 mb-2">
+      <div className={`w-full md:w-1/2 ${isLeft ? 'md:pl-10' : 'md:pr-10'} md:text-${isLeft ? 'left' : 'right'}`}>
+        <div className="p-6 sm:p-8 glass rounded-2xl shadow-xl border border-white/10 hover:border-primary/30 hover:shadow-primary/5 transition-all duration-500 group/card hover:-translate-y-1">
+          <div className={`flex items-center gap-5 mb-4 ${isLeft ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
             {logoUrl && (
-              <div className="w-10 h-10 rounded-full overflow-hidden bg-white/10 flex-shrink-0 border border-white/10">
-                <img src={logoUrl} alt={title} className="w-full h-full object-cover" />
+              <div className="w-14 h-14 rounded-xl overflow-hidden bg-white/5 flex-shrink-0 border border-white/10 group-hover/card:border-primary/30 transition-colors duration-500 p-2">
+                <img src={logoUrl} alt={title} className="w-full h-full object-contain" />
               </div>
             )}
-            <div>
-              <div className="inline-block px-3 py-1 text-xs font-semibold bg-primary/10 text-primary rounded-full">
+            <div className={`flex flex-col ${isLeft ? 'md:items-start' : 'md:items-end'}`}>
+              <div className="inline-block px-4 py-1.5 text-xs font-bold bg-primary/10 text-primary rounded-full mb-2">
                 {year}
               </div>
-              <h3 className="text-lg font-semibold mt-1">{title}</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-white group-hover/card:text-primary transition-colors duration-300">{title}</h3>
             </div>
           </div>
-          <p className="text-sm text-muted-foreground">{description}</p>
+          <div className="text-base sm:text-lg text-slate-300 leading-relaxed">
+            {description}
+          </div>
         </div>
       </div>
       <div className="hidden md:flex md:items-center md:justify-center md:w-16">

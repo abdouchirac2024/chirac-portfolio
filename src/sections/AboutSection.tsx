@@ -172,8 +172,8 @@ const AboutSection: React.FC = () => {
         </div>
 
         <div className="mt-20">
-          <h3 className="text-xl font-bold mb-10 text-center">Mon Parcours</h3>
-          <div className="max-w-4xl mx-auto">
+          <h3 className="text-3xl font-bold mb-16 text-center">Mon Parcours</h3>
+          <div className="max-w-6xl mx-auto">
             <TimelineItem
               year="Mai 2025 - Présent"
               title="Développeur Full Stack & Angular Specialist - MULTI CANAL SERVICE"
