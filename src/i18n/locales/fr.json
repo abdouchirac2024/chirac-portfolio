@@ -52,12 +52,13 @@
     "popular": "Populaire"
   },
   "certifications": {
-    "title": "Certifications & Badges",
-    "subtitle": "Mes certifications professionnelles et formations continues",
-    "verify": "Vérifier",
-    "expired": "Expiré",
-    "valid": "Valide",
-    "allCategories": "Toutes"
+    "title": "Certifications & Formations",
+    "subtitle": "Mes formations en cours et certifications en apprentissage",
+    "viewCourse": "Voir le cours",
+    "inProgress": "En cours",
+    "completed": "Complété",
+    "allCategories": "Toutes",
+    "noResults": "Aucune certification trouvée"
   },
   "testimonials": {
     "title": "Ce Que Disent Mes Clients",
@@ -332,6 +333,7 @@
     "close": "Fermer",
     "open": "Ouvrir",
     "more": "Plus",
-    "less": "Moins"
+    "less": "Moins",
+    "locale": "fr"
   }
 }

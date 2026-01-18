@@ -13,7 +13,7 @@ import ContactSection from '../sections/ContactSection';
 import CustomCursor from '../components/CustomCursor';
 import FormationSection from '../sections/FormationSection';
 import WorkJournalSection from '../sections/WorkJournalSection';
-import LanguageDebug from '../components/LanguageDebug';
+import CertificationsSection from '../sections/CertificationsSection';
 
 const Index: React.FC = () => {
   useEffect(() => {
@@ -39,7 +39,6 @@ const Index: React.FC = () => {
       <ParticleBackgroundSafe />
       <CustomCursor />
       <Header />
-      <LanguageDebug />
       <main>
         <HeroSection />
         <AboutSection />
@@ -48,6 +47,7 @@ const Index: React.FC = () => {
         <FormationSection />
         <ExperienceSection />
         <ProjectsSection />
+        <CertificationsSection />
         <EducationSection />
         <WorkJournalSection />
         <ContactSection />
