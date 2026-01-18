@@ -53,22 +53,6 @@ const EducationSection: React.FC = () => {
       delay: 400,
     },
   ];
-  
-  const certifications = [
-    "DevOps Professional", 
-    "AWS  Developer", 
-    "MongoDB  Developer",
-    "Vue.js  Developer",
-    "react js   Developer",
-    "Angular  Developer",
-    "java  Developer",
-  ];
-
-  const formationImages = [
-    '/images/formation1.jpg',
-    '/images/formation2.jpg',
-    '/images/consulte-france.jpg'
-  ];
 
   return (
     <section id="education" ref={sectionRef} className="py-20 bg-muted/10">
@@ -97,66 +81,6 @@ const EducationSection: React.FC = () => {
               </CardContent>
             </Card>
           ))}
-        </div>
-        <div className="overflow-x-hidden w-full mb-12">
-          <div className="flex items-center gap-8 animate-marquee whitespace-nowrap" style={{animation: 'marquee 20s linear infinite'}}>
-            {formationImages.map((src, idx) => {
-              const getAltText = (index: number) => {
-                switch(index) {
-                  case 0: return "Formation académique - Parcours universitaire";
-                  case 1: return "Études supérieures - Développement informatique";
-                  case 2: return "Remise de diplôme Licence Pro MIAW - IUT d'Évry par le Consulat de France à Douala";
-                  default: return `Formation ${index + 1}`;
-                }
-              };
-              
-              return (
-                <img
-                  key={idx}
-                  src={src}
-                  alt={getAltText(idx)}
-                  className="h-64 rounded-lg shadow-xl object-cover hover:scale-105 transition-transform duration-300"
-                  style={{ minWidth: '320px', maxWidth: '400px' }}
-                />
-              );
-            })}
-            {formationImages.map((src, idx) => {
-              const getAltText = (index: number) => {
-                switch(index) {
-                  case 0: return "Formation académique - Parcours universitaire";
-                  case 1: return "Études supérieures - Développement informatique";
-                  case 2: return "Remise de diplôme Licence Pro MIAW - IUT d'Évry par le Consulat de France à Douala";
-                  default: return `Formation ${index + 1}`;
-                }
-              };
-              
-              return (
-                <img
-                  key={idx + formationImages.length}
-                  src={src}
-                  alt={getAltText(idx)}
-                  className="h-64 rounded-lg shadow-xl object-cover hover:scale-105 transition-transform duration-300"
-                  style={{ minWidth: '320px', maxWidth: '400px' }}
-                />
-              );
-            })}
-          </div>
-          <style>{`
-            @keyframes marquee {
-              0% { transform: translateX(0); }
-              100% { transform: translateX(-50%); }
-            }
-          `}</style>
-        </div>
-        <div className={`opacity-0 ${visible ? 'animate-fade-in' : ''}`} style={{ animationDelay: '600ms' }}>
-          <h3 className="text-xl font-bold mb-6 text-center">Formations</h3>
-          <div className="flex flex-wrap justify-center gap-3">
-            {certifications.map((cert, index) => (
-              <Badge key={index} variant="outline" className="px-4 py-2 text-sm">
-                {cert}
-              </Badge>
-            ))}
-          </div>
         </div>
       </div>
     </section>

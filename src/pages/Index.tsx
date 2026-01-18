@@ -11,7 +11,6 @@ import EducationSection from '../sections/EducationSection';
 import ExperienceSection from '../sections/ExperienceSection';
 import ContactSection from '../sections/ContactSection';
 import CustomCursor from '../components/CustomCursor';
-import FormationSection from '../sections/FormationSection';
 import WorkJournalSection from '../sections/WorkJournalSection';
 import CertificationsSection from '../sections/CertificationsSection';
 
@@ -44,7 +43,6 @@ const Index: React.FC = () => {
         <AboutSection />
         <StatsSection />
         <ServicesSection />
-        <FormationSection />
         <ExperienceSection />
         <ProjectsSection />
         <CertificationsSection />
