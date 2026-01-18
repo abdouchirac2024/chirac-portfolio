@@ -172,29 +172,29 @@ const AboutSection: React.FC = () => {
           <div className="max-w-6xl mx-auto">
             <TimelineItem
               year={`Mai 2025 - ${t('about.present') || 'Présent'}`}
-              title={t('about.timeline.items.mcs.title')}
-              description={t('about.timeline.items.mcs.description')}
+              title={t('timeline.items.mcs.title')}
+              description={t('timeline.items.mcs.description')}
               isLeft={false}
               logoUrl="/images/multicanalservice.jpeg"
             />
             <TimelineItem
               year="2024 - 2025"
-              title={t('about.timeline.items.davinci.title')}
-              description={t('about.timeline.items.davinci.description')}
+              title={t('timeline.items.davinci.title')}
+              description={t('timeline.items.davinci.description')}
               isLeft={true}
               logoUrl="/images/logo_daviinci.jpeg"
             />
             <TimelineItem
               year="2023 - 2024"
-              title={t('about.timeline.items.adaa.title')}
-              description={t('about.timeline.items.adaa.description')}
+              title={t('timeline.items.adaa.title')}
+              description={t('timeline.items.adaa.description')}
               isLeft={false}
               logoUrl="/images/adaa.jpeg"
             />
             <TimelineItem
               year="2022 - 2023"
-              title={t('about.timeline.items.geno.title')}
-              description={t('about.timeline.items.geno.description')}
+              title={t('timeline.items.geno.title')}
+              description={t('timeline.items.geno.description')}
               isLeft={true}
               logoUrl="/images/geno-logo.png"
             />
