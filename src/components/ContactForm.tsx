@@ -4,8 +4,10 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from "@/hooks/use-toast";
+import { useTranslation } from 'react-i18next';
 
 const ContactForm: React.FC = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -29,8 +31,8 @@ const ContactForm: React.FC = () => {
     // Simulate form submission
     setTimeout(() => {
       toast({
-        title: "Message envoyé!",
-        description: "Merci pour votre message. Je vous contacterai bientôt.",
+        title: t('contact.success'),
+        description: t('contact.successDescription'),
       });
       setFormData({
         name: '',
@@ -72,28 +74,28 @@ const ContactForm: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-2">
           <label htmlFor="name" className="text-sm font-medium">
-            Nom
+            {t('contact.name')}
           </label>
           <Input
             id="name"
             name="name"
-            placeholder="Votre nom"
+            placeholder={t('contact.namePlaceholder')}
             value={formData.name}
             onChange={handleChange}
             required
             className="glass"
           />
         </div>
-        
+
         <div className="space-y-2">
           <label htmlFor="email" className="text-sm font-medium">
-            Email
+            {t('contact.email')}
           </label>
           <Input
             id="email"
             name="email"
             type="email"
-            placeholder="votre@email.com"
+            placeholder={t('contact.emailPlaceholder')}
             value={formData.email}
             onChange={handleChange}
             required
@@ -101,30 +103,30 @@ const ContactForm: React.FC = () => {
           />
         </div>
       </div>
-      
+
       <div className="space-y-2">
         <label htmlFor="subject" className="text-sm font-medium">
-          Sujet
+          {t('contact.subject')}
         </label>
         <Input
           id="subject"
           name="subject"
-          placeholder="Sujet du message"
+          placeholder={t('contact.subjectPlaceholder')}
           value={formData.subject}
           onChange={handleChange}
           required
           className="glass"
         />
       </div>
-      
+
       <div className="space-y-2">
         <label htmlFor="message" className="text-sm font-medium">
-          Message
+          {t('contact.message')}
         </label>
         <Textarea
           id="message"
           name="message"
-          placeholder="Votre message ici..."
+          placeholder={t('contact.messagePlaceholder')}
           rows={6}
           value={formData.message}
           onChange={handleChange}
@@ -132,13 +134,13 @@ const ContactForm: React.FC = () => {
           className="glass resize-none"
         />
       </div>
-      
-      <Button 
-        type="submit" 
+
+      <Button
+        type="submit"
         className="w-full md:w-auto"
         disabled={loading}
       >
-        {loading ? 'Envoi...' : 'Envoyer le message'}
+        {loading ? t('contact.sending') : t('contact.send')}
       </Button>
     </form>
   );

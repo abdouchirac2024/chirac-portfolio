@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const formationImages = [
   '/images/formation1.jpg',
@@ -7,10 +8,12 @@ const formationImages = [
 ];
 
 const FormationSection: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="formation" className="py-20 bg-muted/10">
       <div className="container">
-        <h2 className="section-title">Formation</h2>
+        <h2 className="section-title">{t('education.title')}</h2>
         <div className="overflow-x-hidden w-full">
           <div className="flex items-center gap-8 animate-marquee whitespace-nowrap" style={{animation: 'marquee 20s linear infinite'}}>
             {formationImages.map((src, idx) => {

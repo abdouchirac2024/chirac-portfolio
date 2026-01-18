@@ -6,9 +6,13 @@ const LanguageToggle = () => {
   const { i18n } = useTranslation();
 
   const toggleLanguage = () => {
-    const newLang = i18n.language === 'fr' ? 'en' : 'fr';
+    const currentLang = i18n.language.startsWith('fr') ? 'fr' : 'en';
+    const newLang = currentLang === 'fr' ? 'en' : 'fr';
     i18n.changeLanguage(newLang);
+    localStorage.setItem('chirac-portfolio-language', newLang);
   };
+
+  const currentLang = i18n.language.startsWith('fr') ? 'fr' : 'en';
 
   return (
     <Button
@@ -20,7 +24,7 @@ const LanguageToggle = () => {
     >
       <Languages className="h-5 w-5" />
       <span className="absolute -bottom-1 -right-1 text-[10px] font-bold uppercase bg-primary text-primary-foreground rounded px-1">
-        {i18n.language === 'fr' ? 'EN' : 'FR'}
+        {currentLang === 'fr' ? 'EN' : 'FR'}
       </span>
     </Button>
   );

@@ -3,8 +3,10 @@ import { Briefcase, Calendar, TrendingUp, ChevronDown, ChevronUp } from 'lucide-
 import { Button } from '@/components/ui/button';
 import { experiences } from '../data/experiences';
 import ExperienceCard from '../components/ExperienceCard';
+import { useTranslation } from 'react-i18next';
 
 const ExperienceSection: React.FC = () => {
+  const { t } = useTranslation();
   const sectionRef = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
   const [showAll, setShowAll] = useState(false);
@@ -43,21 +45,20 @@ const ExperienceSection: React.FC = () => {
         <div className={`text-center mb-12 sm:mb-16 lg:mb-20 opacity-0 ${visible ? 'animate-fade-in' : ''}`}>
           <div className="flex items-center justify-center gap-2 sm:gap-3 mb-4 sm:mb-6">
             <Briefcase className="w-6 h-6 sm:w-8 sm:h-8 text-primary flex-shrink-0" />
-            <h2 className="section-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Expérience Professionnelle</h2>
+            <h2 className="section-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl">{t('experience.title')}</h2>
           </div>
           <p className="text-muted-foreground max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl xl:max-w-3xl mx-auto mb-6 sm:mb-8 text-sm sm:text-base md:text-lg leading-relaxed">
-            Découvrez mon parcours professionnel de {totalYearsExperience()} ans en développement web, 
-            avec des projets variés allant des applications web modernes aux systèmes ERP complexes.
+            {t('experience.subtitle')}
           </p>
-          
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-8 text-xs sm:text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
               <Calendar className="w-3 h-3 sm:w-4 sm:h-4 text-primary flex-shrink-0" />
-              <span className="whitespace-nowrap">{totalYearsExperience()}+ années d'expérience</span>
+              <span className="whitespace-nowrap">{totalYearsExperience()}+ {t('experience.years')}</span>
             </div>
             <div className="flex items-center gap-2">
               <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4 text-primary flex-shrink-0" />
-              <span className="whitespace-nowrap">{experiences.length} entreprises</span>
+              <span className="whitespace-nowrap">{experiences.length} {t('experience.companies')}</span>
             </div>
             <div className="flex items-center gap-2">
               <Briefcase className="w-3 h-3 sm:w-4 sm:h-4 text-primary flex-shrink-0" />
@@ -106,12 +107,12 @@ const ExperienceSection: React.FC = () => {
                 >
                   {showAll ? (
                     <>
-                      <span className="text-sm sm:text-base">Voir moins</span>
+                      <span className="text-sm sm:text-base">{t('common.less')}</span>
                       <ChevronUp className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:-translate-y-1 transition-transform duration-300" />
                     </>
                   ) : (
                     <>
-                      <span className="text-sm sm:text-base">Voir toutes les expériences ({experiences.length})</span>
+                      <span className="text-sm sm:text-base">{t('experience.showAll')} ({experiences.length})</span>
                       <ChevronDown className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-y-1 transition-transform duration-300" />
                     </>
                   )}
@@ -123,22 +124,22 @@ const ExperienceSection: React.FC = () => {
           <div className="text-center py-16">
             <div className="glass p-8 rounded-lg max-w-md mx-auto">
               <Briefcase className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Aucune expérience à afficher</h3>
+              <h3 className="text-lg font-semibold mb-2">{t('experience.noExperience')}</h3>
               <p className="text-muted-foreground text-sm">
-                Les expériences professionnelles seront bientôt ajoutées.
+                {t('experience.noExperienceDesc')}
               </p>
             </div>
           </div>
         )}
 
         {experiences.length > 0 && (
-          <div className={`mt-12 sm:mt-16 lg:mt-20 text-center opacity-0 ${visible ? 'animate-fade-in' : ''}`} 
+          <div className={`mt-12 sm:mt-16 lg:mt-20 text-center opacity-0 ${visible ? 'animate-fade-in' : ''}`}
                style={{ animationDelay: `${(showAll ? experiences.length + 2 : 5) * 200}ms` }}>
             <div className="glass p-4 sm:p-6 rounded-lg inline-block">
               <p className="text-muted-foreground text-sm sm:text-base">
-                Intéressé par mon profil ? 
+                {t('experience.interested')}
                 <a href="#contact" className="text-primary hover:underline ml-1">
-                  Contactez-moi
+                  {t('experience.contactMe')}
                 </a>
               </p>
             </div>

@@ -23,11 +23,18 @@
     "downloadCV": "Télécharger CV"
   },
   "about": {
-    "title": "À Propos de Moi",
+    "title": "À Propos",
+    "subtitle": "Plus qu'un développeur, un créateur de solutions",
+    "description": "Je suis NJUTAPMVOUI Abdou Arahamanou Chirac, un développeur passionné par l'intersection entre design et technologie. Mon objectif n'est pas seulement d'écrire du code, mais de créer des expériences numériques qui résolvent de vrais problèmes.",
+    "passion": "J'aime transformer des idées complexes en interfaces simples, intuitives et performantes. Que ce soit pour optimiser un processus logistique ou faciliter l'accès à l'information, je place toujours l'utilisateur final au cœur de mes décisions techniques.",
+    "approach": "Mon approche combine une rigueur technique (Angular, React, Cloud) avec une sensibilité produit. Je m'efforce de livrer des applications qui sont non seulement robustes et scalables, mais aussi agréables à utiliser au quotidien.",
     "frontend": "Frontend",
     "backend": "Backend",
     "cloudDevops": "Cloud & DevOps",
-    "tools": "Outils & Autres"
+    "tools": "Outils & Autres",
+    "skillsTitle": "Mes Compétences",
+    "skillsDescription": "Une vue d'ensemble de mon expertise technique, organisée par domaines de spécialisation.",
+    "journeyTitle": "Mon Parcours"
   },
   "stats": {
     "title": "Quelques Chiffres",
@@ -119,6 +126,36 @@
       "personal": "Personnel",
       "professional": "Professionnel",
       "openSource": "Open Source"
+    },
+    "data": {
+      "project1": {
+        "title": "Système ERP Livraison Express",
+        "description": "Système ERP complet pour la logistique du dernier kilomètre avec Angular 19.2.0, déployé sur Google Cloud Platform avec Cloud Functions et notifications Telegram automatisées.",
+        "problem": "La gestion manuelle des livraisons entraînait des retards et des erreurs de suivi.",
+        "solution": "Développement d'une architecture serverless sur GCP avec Angular et Firebase.",
+        "result": "Réduction de 40% des temps de traitement et suivi en temps réel pour les clients."
+      },
+      "project2": {
+        "title": "Congrès Adna Ndogbatjeck",
+        "description": "Plateforme de gestion d'événements avec système d'intégration continue",
+        "problem": "Difficulté à gérer les inscriptions et la communication pour un grand événement.",
+        "solution": "Plateforme centralisée avec Vue.js et Laravel, incluant un pipeline CI/CD robuste.",
+        "result": "Gestion fluide de +500 participants et déploiements automatisés sans interruption."
+      },
+      "project3": {
+        "title": "Application de Gestion de Dépenses",
+        "description": "Une application web moderne pour suivre et gérer les dépenses personnelles avec des graphiques interactifs.",
+        "problem": "Manque de visibilité sur les finances personnelles au quotidien.",
+        "solution": "Dashboard interactif React avec visualisation de données via Recharts.",
+        "result": "Interface intuitive permettant une analyse rapide des habitudes de dépenses."
+      },
+      "project4": {
+        "title": "Africa Unity",
+        "description": "Plateforme de mise en relation professionnelle pour l'Afrique",
+        "problem": "Fragmentation des réseaux professionnels en Afrique.",
+        "solution": "Réseau social professionnel unifié avec backend Laravel performant.",
+        "result": "Connexion facilitée entre professionnels de plusieurs pays africains."
+      }
     }
   },
   "education": {
@@ -127,32 +164,46 @@
   },
   "experience": {
     "title": "Expérience Professionnelle",
-    "subtitle": "Mon parcours dans le développement web",
+    "subtitle": "Découvrez mon parcours professionnel en développement web, avec des projets variés allant des applications web modernes aux systèmes ERP complexes.",
     "present": "Présent",
     "responsibilities": "Responsabilités",
     "technologies": "Technologies",
     "keyFeatures": "Fonctionnalités Clés",
     "architecture": "Architecture",
     "liveProject": "Voir le projet",
-    "years": "ans",
-    "companies": "entreprises"
+    "years": "années d'expérience",
+    "companies": "entreprises",
+    "showAll": "Voir toutes les expériences",
+    "noExperience": "Aucune expérience à afficher",
+    "noExperienceDesc": "Les expériences professionnelles seront bientôt ajoutées.",
+    "interested": "Intéressé par mon profil ?",
+    "contactMe": "Contactez-moi"
   },
   "contact": {
     "title": "Contactez-Moi",
-    "subtitle": "Discutons de votre prochain projet",
+    "subtitle": "Parlons de votre projet",
+    "description": "Vous cherchez un développeur Front-End capable de transformer vos designs en interfaces performantes ? Ou un Full Stack pour construire votre MVP ? Discutons de comment je peux aider votre équipe.",
     "name": "Nom",
     "namePlaceholder": "Votre nom",
     "email": "Email",
     "emailPlaceholder": "votre@email.com",
+    "phone": "Téléphone",
+    "location": "Localisation",
+    "locationValue": "Cameroun",
     "subject": "Sujet",
     "subjectPlaceholder": "De quoi souhaitez-vous parler ?",
     "message": "Message",
     "messagePlaceholder": "Votre message...",
     "send": "Envoyer le message",
     "sending": "Envoi en cours...",
-    "success": "Message envoyé avec succès !",
+    "success": "Message envoyé !",
+    "successDescription": "Merci pour votre message. Je vous contacterai bientôt.",
     "error": "Erreur lors de l'envoi. Réessayez.",
     "preferCV": "Vous préférez consulter mon CV directement ?"
+  },
+  "journal": {
+    "title": "Mon Journal de Bord",
+    "noEntries": "Aucune entrée de journal pour le moment. Revenez bientôt !"
   },
   "footer": {
     "rights": "Tous droits réservés",

@@ -2,41 +2,43 @@ import React from 'react';
 import ContactForm from '../components/ContactForm';
 import { Card } from '@/components/ui/card';
 import { FaWhatsapp } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
 const ContactSection: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="contact" className="py-20 relative overflow-hidden">
       <div className="container relative z-10">
-        <h2 className="section-title">Contact</h2>
+        <h2 className="section-title">{t('contact.title')}</h2>
 
         <div className="max-w-3xl mx-auto">
           <Card className="glass border-none shadow-lg p-6 md:p-8">
             <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
               <div>
-                <h3 className="text-xl font-bold mb-4">Parlons de votre projet</h3>
+                <h3 className="text-xl font-bold mb-4">{t('contact.subtitle')}</h3>
                 <p className="text-muted-foreground mb-6">
-                  Vous cherchez un développeur Front-End capable de transformer vos designs en interfaces performantes ?
-                  Ou un Full Stack pour construire votre MVP ? Discutons de comment je peux aider votre équipe.
+                  {t('contact.description')}
                 </p>
 
                 <div className="space-y-4">
                   <div>
-                    <p className="text-sm font-medium">Email</p>
+                    <p className="text-sm font-medium">{t('contact.email')}</p>
                     <a href="mailto:abdouchirac411@gmail.com" className="text-primary hover:underline">
                       abdouchirac411@gmail.com
                     </a>
                   </div>
 
                   <div>
-                    <p className="text-sm font-medium">Téléphone</p>
+                    <p className="text-sm font-medium">{t('contact.phone')}</p>
                     <a href="tel:+237658488485" className="text-primary hover:underline">
                       +237 658 488 485
                     </a>
                   </div>
 
                   <div>
-                    <p className="text-sm font-medium">Localisation</p>
-                    <p>Cameroun</p>
+                    <p className="text-sm font-medium">{t('contact.location')}</p>
+                    <p>{t('contact.locationValue')}</p>
                   </div>
                   <div className="flex justify-center mt-8">
                     <a

@@ -17,19 +17,20 @@ export const CVDownloadButton = ({
   const { i18n, t } = useTranslation();
 
   const handleDownload = () => {
-    const cvPath = i18n.language === 'fr'
+    const currentLang = i18n.language.startsWith('fr') ? 'fr' : 'en';
+    const cvPath = currentLang === 'fr'
       ? '/images/cv/CV_NJUTAPMVOUI_Chirac.pdf'
       : '/images/cv/CV_NJUTAPMVOUI_Chirac.pdf';
 
     const link = document.createElement('a');
     link.href = cvPath;
-    link.download = `CV_Chirac_${i18n.language.toUpperCase()}.pdf`;
+    link.download = `CV_Chirac_${currentLang.toUpperCase()}.pdf`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
 
     toast.success(
-      i18n.language === 'fr'
+      currentLang === 'fr'
         ? 'CV téléchargé avec succès !'
         : 'CV downloaded successfully!'
     );

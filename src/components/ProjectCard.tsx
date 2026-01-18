@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
+import { useTranslation } from 'react-i18next';
 
 interface ProjectCardProps {
   title: string;
@@ -25,6 +26,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   liveUrl,
   delay = 0,
 }) => {
+  const { t } = useTranslation();
   const [visible, setVisible] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -89,19 +91,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <div className="space-y-3 mb-6 bg-secondary/30 p-4 rounded-lg border border-white/5">
             {problem && (
               <div className="text-sm">
-                <span className="font-semibold text-primary block mb-1">Problème :</span>
+                <span className="font-semibold text-primary block mb-1">{t('projects.problem')} :</span>
                 <span className="text-muted-foreground">{problem}</span>
               </div>
             )}
             {solution && (
               <div className="text-sm">
-                <span className="font-semibold text-primary block mb-1">Solution :</span>
+                <span className="font-semibold text-primary block mb-1">{t('projects.solution')} :</span>
                 <span className="text-muted-foreground">{solution}</span>
               </div>
             )}
             {result && (
               <div className="text-sm">
-                <span className="font-semibold text-green-500 block mb-1">Résultat :</span>
+                <span className="font-semibold text-green-500 block mb-1">{t('projects.result')} :</span>
                 <span className="text-foreground font-medium">{result}</span>
               </div>
             )}
@@ -120,7 +122,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               className="rounded-full px-6 group-hover:bg-primary group-hover:text-white transition-all"
             >
               <a href={liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                Voir le projet
+                {t('projects.viewProject')}
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
               </a>
             </Button>

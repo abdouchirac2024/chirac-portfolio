@@ -23,11 +23,18 @@
     "downloadCV": "Download CV"
   },
   "about": {
-    "title": "About Me",
+    "title": "About",
+    "subtitle": "More than a developer, a solution creator",
+    "description": "I'm NJUTAPMVOUI Abdou Arahamanou Chirac, a developer passionate about the intersection of design and technology. My goal isn't just to write code, but to create digital experiences that solve real problems.",
+    "passion": "I love transforming complex ideas into simple, intuitive, and high-performing interfaces. Whether it's optimizing a logistics process or facilitating access to information, I always place the end user at the heart of my technical decisions.",
+    "approach": "My approach combines technical rigor (Angular, React, Cloud) with product sensitivity. I strive to deliver applications that are not only robust and scalable, but also enjoyable to use on a daily basis.",
     "frontend": "Frontend",
     "backend": "Backend",
     "cloudDevops": "Cloud & DevOps",
-    "tools": "Tools & Others"
+    "tools": "Tools & Others",
+    "skillsTitle": "My Skills",
+    "skillsDescription": "An overview of my technical expertise, organized by areas of specialization.",
+    "journeyTitle": "My Journey"
   },
   "stats": {
     "title": "Some Numbers",
@@ -119,6 +126,36 @@
       "personal": "Personal",
       "professional": "Professional",
       "openSource": "Open Source"
+    },
+    "data": {
+      "project1": {
+        "title": "Express Delivery ERP System",
+        "description": "Complete ERP system for last-mile logistics with Angular 19.2.0, deployed on Google Cloud Platform with Cloud Functions and automated Telegram notifications.",
+        "problem": "Manual delivery management led to delays and tracking errors.",
+        "solution": "Development of a serverless architecture on GCP with Angular and Firebase.",
+        "result": "40% reduction in processing times and real-time tracking for clients."
+      },
+      "project2": {
+        "title": "Adna Ndogbatjeck Congress",
+        "description": "Event management platform with continuous integration system",
+        "problem": "Difficulty managing registrations and communication for a large event.",
+        "solution": "Centralized platform with Vue.js and Laravel, including a robust CI/CD pipeline.",
+        "result": "Smooth management of +500 participants and automated deployments without interruption."
+      },
+      "project3": {
+        "title": "Expense Tracking Application",
+        "description": "A modern web application to track and manage personal expenses with interactive charts.",
+        "problem": "Lack of visibility on daily personal finances.",
+        "solution": "Interactive React dashboard with data visualization via Recharts.",
+        "result": "Intuitive interface enabling quick analysis of spending habits."
+      },
+      "project4": {
+        "title": "Africa Unity",
+        "description": "Professional networking platform for Africa",
+        "problem": "Fragmentation of professional networks in Africa.",
+        "solution": "Unified professional social network with high-performance Laravel backend.",
+        "result": "Facilitated connections between professionals from multiple African countries."
+      }
     }
   },
   "education": {
@@ -127,32 +164,46 @@
   },
   "experience": {
     "title": "Professional Experience",
-    "subtitle": "My journey in web development",
+    "subtitle": "Discover my professional journey in web development, with varied projects ranging from modern web applications to complex ERP systems.",
     "present": "Present",
     "responsibilities": "Responsibilities",
     "technologies": "Technologies",
     "keyFeatures": "Key Features",
     "architecture": "Architecture",
     "liveProject": "View project",
-    "years": "years",
-    "companies": "companies"
+    "years": "years of experience",
+    "companies": "companies",
+    "showAll": "View all experiences",
+    "noExperience": "No experience to display",
+    "noExperienceDesc": "Professional experiences will be added soon.",
+    "interested": "Interested in my profile?",
+    "contactMe": "Contact me"
   },
   "contact": {
     "title": "Contact Me",
-    "subtitle": "Let's discuss your next project",
+    "subtitle": "Let's talk about your project",
+    "description": "Looking for a Front-End developer capable of transforming your designs into high-performing interfaces? Or a Full Stack to build your MVP? Let's discuss how I can help your team.",
     "name": "Name",
     "namePlaceholder": "Your name",
     "email": "Email",
     "emailPlaceholder": "your@email.com",
+    "phone": "Phone",
+    "location": "Location",
+    "locationValue": "Cameroon",
     "subject": "Subject",
     "subjectPlaceholder": "What would you like to talk about?",
     "message": "Message",
     "messagePlaceholder": "Your message...",
     "send": "Send message",
     "sending": "Sending...",
-    "success": "Message sent successfully!",
+    "success": "Message sent!",
+    "successDescription": "Thank you for your message. I'll get back to you soon.",
     "error": "Error sending. Please try again.",
     "preferCV": "Prefer to see my CV directly?"
+  },
+  "journal": {
+    "title": "My Work Journal",
+    "noEntries": "No journal entries at the moment. Come back soon!"
   },
   "footer": {
     "rights": "All rights reserved",

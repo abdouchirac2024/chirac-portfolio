@@ -4,8 +4,10 @@ import SkillCategory from '../components/SkillCategory';
 import TimelineItem from '../components/TimelineItem';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { Code2, Server, Cloud, Wrench } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const AboutSection: React.FC = () => {
+  const { t } = useTranslation();
   const sectionRef = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -32,7 +34,7 @@ const AboutSection: React.FC = () => {
 
   const skillCategories = [
     {
-      title: "Frontend",
+      title: t('about.frontend'),
       icon: Code2,
       skills: [
         { name: 'Angular 19+', percentage: 90 },
@@ -44,7 +46,7 @@ const AboutSection: React.FC = () => {
       ]
     },
     {
-      title: "Backend",
+      title: t('about.backend'),
       icon: Server,
       skills: [
         { name: 'Laravel', percentage: 85 },
@@ -55,7 +57,7 @@ const AboutSection: React.FC = () => {
       ]
     },
     {
-      title: "Cloud & DevOps",
+      title: t('about.cloudDevops'),
       icon: Cloud,
       skills: [
         { name: 'Google Cloud Platform', percentage: 75 },
@@ -66,7 +68,7 @@ const AboutSection: React.FC = () => {
       ]
     },
     {
-      title: "Outils & Autres",
+      title: t('about.tools'),
       icon: Wrench,
       skills: [
         { name: 'Telegram Bot API', percentage: 90 },
@@ -94,7 +96,7 @@ const AboutSection: React.FC = () => {
   return (
     <section id="about" ref={sectionRef} className="py-12 sm:py-16 md:py-20 lg:py-24 bg-muted/10">
       <div className="container">
-        <h2 className="section-title">À Propos</h2>
+        <h2 className="section-title">{t('about.title')}</h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-start">
           <div className={`opacity-0 ${visible ? 'animate-fade-in' : ''} order-2 lg:order-1`}>
@@ -129,21 +131,15 @@ const AboutSection: React.FC = () => {
           <div className="order-1 lg:order-2">
             <div className={`glass p-6 sm:p-8 md:p-10 rounded-2xl shadow-xl border border-white/10 opacity-0 ${visible ? 'animate-fade-in' : ''
               }`} style={{ animationDelay: '0.2s' }}>
-              <h3 className="text-2xl sm:text-3xl font-bold mb-6 bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent">Plus qu'un développeur, un créateur de solutions</h3>
+              <h3 className="text-2xl sm:text-3xl font-bold mb-6 bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent">{t('about.subtitle')}</h3>
               <p className="mb-4 sm:mb-6 responsive-text">
-                Je suis <strong>NJUTAPMVOUI Abdou Arahamanou Chirac</strong>, un développeur passionné par l'intersection entre
-                design et technologie. Mon objectif n'est pas seulement d'écrire du code, mais de créer des expériences numériques
-                qui résolvent de vrais problèmes.
+                {t('about.description')}
               </p>
               <p className="mb-4 sm:mb-6 responsive-text">
-                J'aime transformer des idées complexes en interfaces simples, intuitives et performantes.
-                Que ce soit pour optimiser un processus logistique ou faciliter l'accès à l'information,
-                je place toujours l'utilisateur final au cœur de mes décisions techniques.
+                {t('about.passion')}
               </p>
               <p className="responsive-text">
-                Mon approche combine une rigueur technique (Angular, React, Cloud) avec une sensibilité produit.
-                Je m'efforce de livrer des applications qui sont non seulement robustes et scalables,
-                mais aussi agréables à utiliser au quotidien.
+                {t('about.approach')}
               </p>
             </div>
 
@@ -152,9 +148,9 @@ const AboutSection: React.FC = () => {
 
         <div className={`mt-16 sm:mt-20 opacity-0 ${visible ? 'animate-fade-in' : ''}`} style={{ animationDelay: '0.4s' }}>
           <div className="text-center mb-12">
-            <h3 className="text-2xl sm:text-3xl font-bold mb-4">Mes Compétences</h3>
+            <h3 className="text-2xl sm:text-3xl font-bold mb-4">{t('about.skillsTitle')}</h3>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Une vue d'ensemble de mon expertise technique, organisée par domaines de spécialisation.
+              {t('about.skillsDescription')}
             </p>
           </div>
 
@@ -172,7 +168,7 @@ const AboutSection: React.FC = () => {
         </div>
 
         <div className="mt-20">
-          <h3 className="text-3xl font-bold mb-16 text-center">Mon Parcours</h3>
+          <h3 className="text-3xl font-bold mb-16 text-center">{t('about.journeyTitle')}</h3>
           <div className="max-w-6xl mx-auto">
             <TimelineItem
               year="Mai 2025 - Présent"
