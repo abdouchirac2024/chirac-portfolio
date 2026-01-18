@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronDown, ChevronUp, ExternalLink, Calendar, MapPin } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import type { WorkExperience } from '../types/experience';
 
 interface ExperienceCardProps {
@@ -8,6 +9,7 @@ interface ExperienceCardProps {
 }
 
 const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, delay = 0 }) => {
+  const { t, i18n } = useTranslation();
   const [visible, setVisible] = useState(false);
   const [expanded, setExpanded] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
@@ -40,9 +42,9 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, delay = 0 }
   }, [delay]);
 
   const formatDate = (dateString: string) => {
-    if (dateString === "Present") return "Présent";
+    if (dateString === "Present") return t('experience.present');
     const date = new Date(dateString);
-    return date.toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' });
+    return date.toLocaleDateString(i18n.language === 'fr' ? 'fr-FR' : 'en-US', { month: 'long', year: 'numeric' });
   };
 
   const calculateDuration = (startDate: string, endDate: string) => {
@@ -50,22 +52,22 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, delay = 0 }
     const end = endDate === "Present" ? new Date() : new Date(endDate);
     const diffTime = Math.abs(end.getTime() - start.getTime());
     const diffMonths = Math.ceil(diffTime / (1000 * 60 * 60 * 24 * 30));
-    
+
     if (diffMonths < 12) {
-      return `${diffMonths} mois`;
+      return `${diffMonths} ${t('experience.duration.month')}`;
     } else {
       const years = Math.floor(diffMonths / 12);
       const months = diffMonths % 12;
-      return months > 0 ? `${years} an${years > 1 ? 's' : ''} ${months} mois` : `${years} an${years > 1 ? 's' : ''}`;
+      const yearLabel = years > 1 ? t('experience.duration.years') : t('experience.duration.year');
+      return months > 0 ? `${years} ${yearLabel} ${months} ${t('experience.duration.month')}` : `${years} ${yearLabel}`;
     }
   };
 
   return (
     <div
       ref={cardRef}
-      className={`group rounded-xl overflow-hidden glass transition-all duration-500 ease-out opacity-0 ${
-        visible ? 'animate-zoom-in opacity-100' : ''
-      } hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 hover:scale-105 border border-white/10 bg-gradient-to-br from-slate-800/50 to-slate-900/50 w-full h-full flex flex-col transform`}
+      className={`group rounded-xl overflow-hidden glass transition-all duration-500 ease-out opacity-0 ${visible ? 'animate-zoom-in opacity-100' : ''
+        } hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 hover:scale-105 border border-white/10 bg-gradient-to-br from-slate-800/50 to-slate-900/50 w-full h-full flex flex-col transform`}
     >
       {experience.logoUrl && (
         <div className="h-24 sm:h-28 md:h-32 flex items-center justify-center bg-gradient-to-r from-primary/10 to-primary/5 p-3 sm:p-4 relative overflow-hidden">
@@ -78,7 +80,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, delay = 0 }
           <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
         </div>
       )}
-      
+
       <div className="p-4 sm:p-5 md:p-6 flex-1 flex flex-col">
         <div className="flex items-start justify-between mb-4 sm:mb-6">
           <div className="flex-1">
@@ -111,7 +113,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, delay = 0 }
           <div className="mb-4 sm:mb-6">
             <h4 className="text-xs sm:text-sm font-semibold text-slate-200 mb-2 sm:mb-3 flex items-center gap-2">
               <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full flex-shrink-0"></span>
-              Responsabilités Clés
+              {t('experience.responsibilities')}
             </h4>
             <ul className="space-y-1.5 sm:space-y-2 text-slate-300 text-xs sm:text-sm">
               {experience.responsibilities.slice(0, expanded ? undefined : 3).map((item, index) => (
@@ -121,7 +123,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, delay = 0 }
                 </li>
               ))}
             </ul>
-            
+
             {experience.responsibilities.length > 3 && (
               <button
                 onClick={() => setExpanded(!expanded)}
@@ -129,11 +131,11 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, delay = 0 }
               >
                 {expanded ? (
                   <>
-                    Voir moins <ChevronUp className="w-3 h-3 sm:w-4 sm:h-4" />
+                    {t('common.less')} <ChevronUp className="w-3 h-3 sm:w-4 sm:h-4" />
                   </>
                 ) : (
                   <>
-                    Voir plus ({experience.responsibilities.length - 3} autres) <ChevronDown className="w-3 h-3 sm:w-4 sm:h-4" />
+                    {t('projects.showMore')} ({experience.responsibilities.length - 3} {t('common.more')}) <ChevronDown className="w-3 h-3 sm:w-4 sm:h-4" />
                   </>
                 )}
               </button>

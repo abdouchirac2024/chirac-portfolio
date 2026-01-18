@@ -10,7 +10,7 @@ const ExperienceSection: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
   const [showAll, setShowAll] = useState(false);
-  
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -20,11 +20,11 @@ const ExperienceSection: React.FC = () => {
       },
       { threshold: 0.1 }
     );
-    
+
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
-    
+
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
@@ -70,35 +70,51 @@ const ExperienceSection: React.FC = () => {
         {experiences && experiences.length > 0 ? (
           <>
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
-              {experiences.slice(0, showAll ? experiences.length : 3).map((exp, index) => (
-                <div
-                  key={`${exp.company}-${exp.title}-${index}`}
-                  className={`transition-all duration-500 ${
-                    visible 
-                      ? 'opacity-100 translate-y-0' 
-                      : 'opacity-0 translate-y-4'
-                  } ${
-                    index >= 3 && showAll 
-                      ? 'animate-fade-in' 
-                      : ''
-                  }`}
-                  style={{ 
-                    animationDelay: index < 3 
-                      ? `${(index + 1) * 200}ms` 
-                      : `${(index - 2) * 150}ms`
-                  }}
-                >
-                  <ExperienceCard
-                    experience={exp}
-                    delay={0} // Animation handled by parent
-                  />
-                </div>
-              ))}
+              {experiences.map((exp, index) => {
+                const experienceKey = exp.company.toLowerCase().includes('multi canal') ? 'mcs' :
+                  exp.company.toLowerCase().includes('da vinci') ? 'davinci' :
+                    exp.company.toLowerCase().includes('adaa') ? 'adaa' : 'geno';
+
+                const translatedExp = {
+                  ...exp,
+                  title: t(`experience.data.${experienceKey}.title`),
+                  responsibilities: t(`experience.data.${experienceKey}.responsibilities`, { returnObjects: true }) as string[],
+                  projectDetails: exp.projectDetails ? {
+                    ...exp.projectDetails,
+                    description: t(`experience.data.${experienceKey}.description`),
+                    keyFeatures: t(`experience.data.${experienceKey}.keyFeatures`, { returnObjects: true }) as string[],
+                    architecture: t(`experience.data.${experienceKey}.architecture`)
+                  } : undefined
+                };
+
+                return (
+                  <div
+                    key={`${exp.company}-${exp.title}-${index}`}
+                    className={`transition-all duration-500 ${visible
+                        ? 'opacity-100 translate-y-0'
+                        : 'opacity-0 translate-y-4'
+                      } ${index >= 3 && showAll
+                        ? 'animate-fade-in'
+                        : index >= 3 ? 'hidden' : ''
+                      }`}
+                    style={{
+                      animationDelay: index < 3
+                        ? `${(index + 1) * 200}ms`
+                        : `${(index - 2) * 150}ms`
+                    }}
+                  >
+                    <ExperienceCard
+                      experience={translatedExp}
+                      delay={0} // Animation handled by parent
+                    />
+                  </div>
+                );
+              })}
             </div>
-            
+
             {experiences.length > 3 && (
-              <div className={`mt-8 sm:mt-12 text-center opacity-0 ${visible ? 'animate-fade-in' : ''}`} 
-                   style={{ animationDelay: `${Math.min(4, experiences.length + 1) * 200}ms` }}>
+              <div className={`mt-8 sm:mt-12 text-center opacity-0 ${visible ? 'animate-fade-in' : ''}`}
+                style={{ animationDelay: `${Math.min(4, experiences.length + 1) * 200}ms` }}>
                 <Button
                   onClick={() => setShowAll(!showAll)}
                   variant="outline"
@@ -134,7 +150,7 @@ const ExperienceSection: React.FC = () => {
 
         {experiences.length > 0 && (
           <div className={`mt-12 sm:mt-16 lg:mt-20 text-center opacity-0 ${visible ? 'animate-fade-in' : ''}`}
-               style={{ animationDelay: `${(showAll ? experiences.length + 2 : 5) * 200}ms` }}>
+            style={{ animationDelay: `${(showAll ? experiences.length + 2 : 5) * 200}ms` }}>
             <div className="glass p-4 sm:p-6 rounded-lg inline-block">
               <p className="text-muted-foreground text-sm sm:text-base">
                 {t('experience.interested')}

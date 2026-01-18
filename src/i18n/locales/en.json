@@ -34,7 +34,8 @@
     "tools": "Tools & Others",
     "skillsTitle": "My Skills",
     "skillsDescription": "An overview of my technical expertise, organized by areas of specialization.",
-    "journeyTitle": "My Journey"
+    "journeyTitle": "My Journey",
+    "present": "Present"
   },
   "stats": {
     "title": "Some Numbers",
@@ -104,7 +105,25 @@
     "education": "Education",
     "certification": "Certification",
     "achievement": "Achievement",
-    "present": "Present"
+    "present": "Present",
+    "items": {
+      "mcs": {
+        "title": "Full Stack Developer & Angular Specialist - MULTI CANAL SERVICE",
+        "description": "Development of a complete ERP system with Angular 19.2.0 for last-mile logistics. Deployment on Google Cloud Platform with Cloud Functions and Cloud Run. Implementation of automated Telegram notifications, Firebase purge via Cloud Functions, and full serverless architecture."
+      },
+      "davinci": {
+        "title": "Full Stack Developer - DA VINCI IT SOLUTIONS",
+        "description": "Development of modern web applications with React.js, Node.js, Express, and MongoDB. Creation of a blog application and an expense management system with OAuth authentication. Full design of the Adna Congress project with Laravel API and Vue.js."
+      },
+      "adaa": {
+        "title": "Full Stack Developer & Tester - ADAA",
+        "description": "Development and maintenance of Jobs ADAALearning and ADAA Summit platforms. Functional testing for 2 months then full stack development for 6 months."
+      },
+      "geno": {
+        "title": "Full Stack Developer - GENO CONSULTING",
+        "description": "Development of Africa Unity, a complete platform for managing events, articles, and online training with Vue.js 3 on the frontend and Laravel API on the backend."
+      }
+    }
   },
   "projects": {
     "title": "My Projects",
@@ -177,7 +196,103 @@
     "noExperience": "No experience to display",
     "noExperienceDesc": "Professional experiences will be added soon.",
     "interested": "Interested in my profile?",
-    "contactMe": "Contact me"
+    "contactMe": "Contact me",
+    "duration": {
+      "month": "month",
+      "year": "year",
+      "years": "years"
+    },
+    "data": {
+      "mcs": {
+        "title": "Full Stack Developer - Angular/ERP",
+        "description": "Complete ERP system for logistics management with interconnected modules",
+        "responsibilities": [
+          "Development of a complete ERP system for last-mile logistics with Angular 19.2.0",
+          "Implementation of Standalone components and Lazy Loading to optimize performance",
+          "Creation of a state management system with RxJS (BehaviorSubjects) for real-time synchronization",
+          "Development of functional modules: Dashboard, User Management, Orders & Deliveries, Stock",
+          "Deployment of Laravel applications on Google Cloud Platform with Cloud Run",
+          "Deployment of Angular applications on Google Cloud with Cloud Functions",
+          "Implementation of Cloud Functions for automatic Firebase database purge",
+          "Development of Telegram notification system via Cloud Functions",
+          "Configuration of Cloud Run for microservices management and auto-scaling",
+          "Integration of PrimeNG 19.1.2 with Tailwind CSS for a modern and responsive interface",
+          "Implementation of security with AuthGuard and JWT interceptors",
+          "Development of the POS (Point of Sale) module for fast order taking"
+        ],
+        "keyFeatures": [
+          "Complete user management with roles and permissions",
+          "Real-time tracking of orders and deliveries",
+          "Multi-site management of stocks and inventories",
+          "Complete traceability system with activity logs",
+          "POS interface for fast orders",
+          "Generation of PDF and Excel reports",
+          "Dashboard with interactive statistics",
+          "Automated deployment on Google Cloud Platform",
+          "Real-time Telegram notifications via Cloud Functions",
+          "Automatic Firebase database purge with Cloud Run",
+          "Serverless architecture with auto-scaling"
+        ],
+        "architecture": "Cloud-native architecture with Angular frontend deployed via Cloud Functions, Laravel backend on Cloud Run, Firebase database with automatic purge, and integrated Telegram notification system"
+      },
+      "davinci": {
+        "title": "Full Stack Developer",
+        "description": "Development of modern web applications with MERN stack and Laravel/Vue.js",
+        "responsibilities": [
+          "Development of a blog application with React.js, Node.js, Express, and MongoDB",
+          "Creation of an expense management application with a responsive interface",
+          "Implementation of OAuth authentication and full CRUD system",
+          "Design and modeling of the Adna Congress project",
+          "Creation of Figma mockups and full development with Laravel API and Vue.js",
+          "Tailwind CSS integration for a modern and responsive design"
+        ],
+        "keyFeatures": [
+          "Interactive blog with content management",
+          "Expense management application with dashboards",
+          "Secure OAuth authentication",
+          "Responsive and modern user interface",
+          "RESTful API with Laravel",
+          "Vue.js frontend with Tailwind CSS"
+        ]
+      },
+      "adaa": {
+        "title": "Full Stack Developer & Tester",
+        "description": "Development of educational and recruitment platforms",
+        "responsibilities": [
+          "Development and maintenance of ADAA Learning and ADAA Summit platforms",
+          "Functional and integration testing for 2 months",
+          "Full stack development for 6 months",
+          "Participation in application architecture design",
+          "Close collaboration with the technical team led by Mr. Brice"
+        ],
+        "keyFeatures": [
+          "ADAA Learning online training platform",
+          "Integrated recruitment system",
+          "Event and summit management",
+          "Intuitive user interface",
+          "User management system"
+        ]
+      },
+      "geno": {
+        "title": "Full Stack Developer",
+        "description": "Professional networking platform for Africa",
+        "responsibilities": [
+          "Development of Africa Unity, an event management platform",
+          "Creation of an online article and training management system",
+          "Frontend development with Vue.js 3 and backend with Laravel API",
+          "Implementation of professional networking features",
+          "Collaboration with the team led by Mr. YVAN"
+        ],
+        "keyFeatures": [
+          "Complete event management",
+          "Articles and news system",
+          "Integrated online training",
+          "Professional networking",
+          "Modern interface with Vue.js 3",
+          "Robust API with Laravel"
+        ]
+      }
+    }
   },
   "contact": {
     "title": "Contact Me",

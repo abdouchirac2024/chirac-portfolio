@@ -171,78 +171,30 @@ const AboutSection: React.FC = () => {
           <h3 className="text-3xl font-bold mb-16 text-center">{t('about.journeyTitle')}</h3>
           <div className="max-w-6xl mx-auto">
             <TimelineItem
-              year="Mai 2025 - Présent"
-              title="Développeur Full Stack & Angular Specialist - MULTI CANAL SERVICE"
-              description={
-                <>
-                  Développement d'un système ERP complet avec Angular 19.2.0 pour la logistique du dernier kilomètre.
-                  Déploiement sur Google Cloud Platform avec Cloud Functions et Cloud Run. Implémentation de notifications
-                  Telegram automatisées, purge Firebase via Cloud Functions, et architecture serverless complète.
-                </>
-              }
+              year={`Mai 2025 - ${t('about.present') || 'Présent'}`}
+              title={t('about.timeline.items.mcs.title')}
+              description={t('about.timeline.items.mcs.description')}
               isLeft={false}
               logoUrl="/images/multicanalservice.jpeg"
             />
             <TimelineItem
               year="2024 - 2025"
-              title="Développeur Full Stack - DA VINCI IT SOLUTIONS"
-              description={
-                <>
-                  Développement d'applications web modernes avec React.js, Node.js, Express et MongoDB.
-                  Création d'une application de blog et d'un système de gestion des dépenses avec authentification OAuth.
-                  Conception complète du projet Congrès ADNA avec Laravel API et Vue.js.
-                </>
-              }
+              title={t('about.timeline.items.davinci.title')}
+              description={t('about.timeline.items.davinci.description')}
               isLeft={true}
               logoUrl="/images/logo_daviinci.jpeg"
             />
             <TimelineItem
               year="2023 - 2024"
-              title="Développeur Full Stack & Testeur - ADAA"
-              description={
-                <>
-                  Développement et maintenance des plateformes{" "}
-                  <a
-                    href="https://jobs.adaalearning.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary hover:underline"
-                  >
-                    Jobs ADAALearning
-                  </a>
-                  {" "}et{" "}
-                  <a
-                    href="https://adaasummit.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary hover:underline"
-                  >
-                    ADAA Summit
-                  </a>
-                  . Tests fonctionnels pendant 2 mois puis développement full stack pendant 6 mois.
-                </>
-              }
+              title={t('about.timeline.items.adaa.title')}
+              description={t('about.timeline.items.adaa.description')}
               isLeft={false}
               logoUrl="/images/adaa.jpeg"
             />
             <TimelineItem
               year="2022 - 2023"
-              title="Développeur Full Stack - GENO CONSULTING"
-              description={
-                <>
-                  Développement d'{" "}
-                  <a
-                    href="https://africaunity.net"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary hover:underline"
-                  >
-                    Africa Unity
-                  </a>
-                  , une plateforme complète de gestion d'événements, d'articles et de formations en ligne
-                  avec Vue.js 3 en frontend et Laravel API en backend.
-                </>
-              }
+              title={t('about.timeline.items.geno.title')}
+              description={t('about.timeline.items.geno.description')}
               isLeft={true}
               logoUrl="/images/geno-logo.png"
             />
