@@ -1,38 +1,27 @@
-
-import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
+import { useTranslation } from 'react-i18next';
+import { Languages } from 'lucide-react';
 
-interface LanguageToggleProps {
-  onChange?: (lang: 'fr' | 'en') => void;
-}
-
-const LanguageToggle: React.FC<LanguageToggleProps> = ({ onChange }) => {
-  const [language, setLanguage] = useState<'fr' | 'en'>('fr');
-
-  useEffect(() => {
-    const savedLang = localStorage.getItem('language') as 'fr' | 'en' | null;
-    if (savedLang) {
-      setLanguage(savedLang);
-    }
-  }, []);
+const LanguageToggle = () => {
+  const { i18n } = useTranslation();
 
   const toggleLanguage = () => {
-    const newLang = language === 'fr' ? 'en' : 'fr';
-    setLanguage(newLang);
-    localStorage.setItem('language', newLang);
-    if (onChange) {
-      onChange(newLang);
-    }
+    const newLang = i18n.language === 'fr' ? 'en' : 'fr';
+    i18n.changeLanguage(newLang);
   };
 
   return (
     <Button
-      variant="outline"
-      size="sm"
+      variant="ghost"
+      size="icon"
       onClick={toggleLanguage}
-      className="text-xs font-medium"
+      className="relative group"
+      aria-label="Toggle language"
     >
-      {language === 'fr' ? 'EN' : 'FR'}
+      <Languages className="h-5 w-5" />
+      <span className="absolute -bottom-1 -right-1 text-[10px] font-bold uppercase bg-primary text-primary-foreground rounded px-1">
+        {i18n.language === 'fr' ? 'EN' : 'FR'}
+      </span>
     </Button>
   );
 };

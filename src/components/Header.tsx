@@ -1,9 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-
+import { ThemeToggle } from '@/components/ThemeToggle';
+import LanguageToggle from '@/components/LanguageToggle';
+import { useTranslation } from 'react-i18next';
 
 const Header: React.FC = () => {
+  const { t } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
@@ -36,13 +39,13 @@ const Header: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { title: 'Accueil', href: '#home' },
-    { title: 'À Propos', href: '#about' },
-    { title: 'Expérience', href: '#experience' },
-    { title: 'Projets', href: '#projects' },
-    { title: 'Formation', href: '#education' },
-    { title: 'Journal', href: '#work-journal' },
-    { title: 'Contact', href: '#contact' },
+    { title: t('nav.home'), href: '#home' },
+    { title: t('nav.about'), href: '#about' },
+    { title: t('nav.experience'), href: '#experience' },
+    { title: t('nav.projects'), href: '#projects' },
+    { title: t('nav.education'), href: '#education' },
+    { title: t('nav.journal'), href: '#work-journal' },
+    { title: t('nav.contact'), href: '#contact' },
   ];
 
   return (
@@ -78,6 +81,10 @@ const Header: React.FC = () => {
               </a>
             );
           })}
+          <div className="flex items-center gap-1 ml-2">
+            <ThemeToggle />
+            <LanguageToggle />
+          </div>
         </nav>
 
         {/* Tablet Navigation */}
@@ -97,20 +104,26 @@ const Header: React.FC = () => {
               </a>
             );
           })}
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="px-2"
-          >
-            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
-            </svg>
-          </Button>
+          <div className="flex items-center gap-1">
+            <ThemeToggle />
+            <LanguageToggle />
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="px-2"
+            >
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+              </svg>
+            </Button>
+          </div>
         </nav>
 
         {/* Mobile Navigation */}
-        <div className="md:hidden flex items-center">
+        <div className="md:hidden flex items-center gap-1">
+          <ThemeToggle />
+          <LanguageToggle />
           <Button
             variant="ghost"
             size="icon"

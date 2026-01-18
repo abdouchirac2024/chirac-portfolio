@@ -4,13 +4,15 @@ import Footer from '../components/Footer';
 import ParticleBackgroundSafe from '../components/ParticleBackgroundSafe';
 import HeroSection from '../sections/HeroSection';
 import AboutSection from '../sections/AboutSection';
+import StatsSection from '../sections/StatsSection';
+import ServicesSection from '../sections/ServicesSection';
 import ProjectsSection from '../sections/ProjectsSection';
 import EducationSection from '../sections/EducationSection';
-import ExperienceSection from '../sections/ExperienceSection'; // Added import
+import ExperienceSection from '../sections/ExperienceSection';
 import ContactSection from '../sections/ContactSection';
 import CustomCursor from '../components/CustomCursor';
 import FormationSection from '../sections/FormationSection';
-import WorkJournalSection from '../sections/WorkJournalSection'; // New import
+import WorkJournalSection from '../sections/WorkJournalSection';
 
 const Index: React.FC = () => {
   useEffect(() => {
@@ -39,11 +41,13 @@ const Index: React.FC = () => {
       <main>
         <HeroSection />
         <AboutSection />
+        <StatsSection />
+        <ServicesSection />
         <FormationSection />
-        <ExperienceSection /> {/* Moved before Projects */}
+        <ExperienceSection />
         <ProjectsSection />
         <EducationSection />
-        <WorkJournalSection /> {/* Newly added section */}
+        <WorkJournalSection />
         <ContactSection />
       </main>
       <Footer />

@@ -1,10 +1,8 @@
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
-
-// Force dark mode and handle potential 3D errors
-document.documentElement.classList.add('dark');
-localStorage.setItem('theme', 'dark');
+import './i18n/config'
+import { ThemeProvider } from './contexts/ThemeProvider'
 
 // Error boundary for 3D components
 window.addEventListener('error', (event) => {
@@ -14,4 +12,8 @@ window.addEventListener('error', (event) => {
   }
 });
 
-createRoot(document.getElementById("root")!).render(<App />);
+createRoot(document.getElementById("root")!).render(
+  <ThemeProvider defaultTheme="dark" storageKey="chirac-portfolio-theme">
+    <App />
+  </ThemeProvider>
+);

@@ -1,0 +1,171 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "experience": "Expérience",
+    "projects": "Projets",
+    "services": "Services",
+    "certifications": "Certifications",
+    "blog": "Blog",
+    "testimonials": "Témoignages",
+    "education": "Formation",
+    "journal": "Journal",
+    "contact": "Contact",
+    "timeline": "Parcours",
+    "currentWork": "En Cours"
+  },
+  "hero": {
+    "greeting": "Bonjour, je suis",
+    "name": "Abdou",
+    "subtitle": "Développeur Front-End & Full Stack",
+    "description": "Je conçois des interfaces utilisateur rapides, intuitives et orientées conversion avec React, Vue et Tailwind.",
+    "cta": "Voir mes projets",
+    "downloadCV": "Télécharger CV"
+  },
+  "about": {
+    "title": "À Propos de Moi",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "cloudDevops": "Cloud & DevOps",
+    "tools": "Outils & Autres"
+  },
+  "stats": {
+    "title": "Quelques Chiffres",
+    "yearsExperience": "Années d'Expérience",
+    "projectsCompleted": "Projets Complétés",
+    "technologiesMastered": "Technologies Maîtrisées",
+    "happyClients": "Clients Satisfaits"
+  },
+  "services": {
+    "title": "Services Offerts",
+    "subtitle": "Comment je peux vous aider à concrétiser vos projets",
+    "getStarted": "Commencer",
+    "learnMore": "En savoir plus",
+    "popular": "Populaire"
+  },
+  "certifications": {
+    "title": "Certifications & Badges",
+    "subtitle": "Mes certifications professionnelles et formations continues",
+    "verify": "Vérifier",
+    "expired": "Expiré",
+    "valid": "Valide",
+    "allCategories": "Toutes"
+  },
+  "testimonials": {
+    "title": "Ce Que Disent Mes Clients",
+    "subtitle": "Retours d'expérience de collaborations réussies",
+    "client": "Client",
+    "colleague": "Collègue",
+    "manager": "Manager",
+    "partner": "Partenaire"
+  },
+  "blog": {
+    "title": "Blog & Articles",
+    "subtitle": "Partage de connaissances techniques et retours d'expérience",
+    "readMore": "Lire la suite",
+    "minRead": "min de lecture",
+    "featured": "À la une",
+    "allCategories": "Toutes",
+    "tutorial": "Tutorial",
+    "caseStudy": "Étude de Cas",
+    "techInsights": "Tech Insights",
+    "career": "Carrière"
+  },
+  "currentWork": {
+    "title": "Projets En Cours",
+    "subtitle": "Ce sur quoi je travaille actuellement",
+    "progress": "Progression",
+    "status": {
+      "active": "Actif",
+      "onHold": "En pause",
+      "planning": "Planification"
+    },
+    "category": {
+      "project": "Projet",
+      "learning": "Apprentissage",
+      "sideProject": "Side Project",
+      "contribution": "Contribution"
+    },
+    "estimatedCompletion": "Fin estimée",
+    "latestUpdate": "Dernière mise à jour"
+  },
+  "timeline": {
+    "title": "Mon Parcours",
+    "subtitle": "Une vue chronologique de mon évolution professionnelle",
+    "allTypes": "Tout",
+    "work": "Travail",
+    "education": "Éducation",
+    "certification": "Certification",
+    "achievement": "Réalisation",
+    "present": "Présent"
+  },
+  "projects": {
+    "title": "Mes Projets",
+    "subtitle": "Une sélection de mes réalisations récentes",
+    "viewProject": "Voir le projet",
+    "viewCode": "Voir le code",
+    "problem": "Problème",
+    "solution": "Solution",
+    "result": "Résultat",
+    "showMore": "Voir plus",
+    "showLess": "Voir moins",
+    "allTech": "Tous",
+    "allYears": "Toutes les années",
+    "allTypes": "Tous les types",
+    "search": "Rechercher des projets...",
+    "clearFilters": "Effacer les filtres",
+    "noResults": "Aucun projet trouvé",
+    "types": {
+      "personal": "Personnel",
+      "professional": "Professionnel",
+      "openSource": "Open Source"
+    }
+  },
+  "education": {
+    "title": "Formation & Éducation",
+    "certifications": "Certifications"
+  },
+  "experience": {
+    "title": "Expérience Professionnelle",
+    "subtitle": "Mon parcours dans le développement web",
+    "present": "Présent",
+    "responsibilities": "Responsabilités",
+    "technologies": "Technologies",
+    "keyFeatures": "Fonctionnalités Clés",
+    "architecture": "Architecture",
+    "liveProject": "Voir le projet",
+    "years": "ans",
+    "companies": "entreprises"
+  },
+  "contact": {
+    "title": "Contactez-Moi",
+    "subtitle": "Discutons de votre prochain projet",
+    "name": "Nom",
+    "namePlaceholder": "Votre nom",
+    "email": "Email",
+    "emailPlaceholder": "votre@email.com",
+    "subject": "Sujet",
+    "subjectPlaceholder": "De quoi souhaitez-vous parler ?",
+    "message": "Message",
+    "messagePlaceholder": "Votre message...",
+    "send": "Envoyer le message",
+    "sending": "Envoi en cours...",
+    "success": "Message envoyé avec succès !",
+    "error": "Erreur lors de l'envoi. Réessayez.",
+    "preferCV": "Vous préférez consulter mon CV directement ?"
+  },
+  "footer": {
+    "rights": "Tous droits réservés",
+    "madeWith": "Fait avec",
+    "by": "par"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "tryAgain": "Réessayer",
+    "close": "Fermer",
+    "open": "Ouvrir",
+    "more": "Plus",
+    "less": "Moins"
+  }
+}

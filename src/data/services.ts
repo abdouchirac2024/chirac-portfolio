@@ -1,0 +1,90 @@
+import { Code2, Server, Cloud, Lightbulb, Palette, Boxes } from 'lucide-react';
+import { Service } from '../types/service';
+
+export const services: Service[] = [
+  {
+    id: 'frontend-dev',
+    title: 'Développement Frontend',
+    description: 'Création d\'interfaces utilisateur modernes, réactives et performantes avec les dernières technologies.',
+    icon: Code2,
+    features: [
+      'Applications React, Vue.js et Angular',
+      'Design responsive et mobile-first',
+      'Optimisation des performances',
+      'Intégration d\'API RESTful',
+      'State management moderne',
+    ],
+    technologies: ['React', 'Vue.js', 'Angular', 'TypeScript', 'Tailwind CSS'],
+    popular: true,
+  },
+  {
+    id: 'backend-dev',
+    title: 'Développement Backend',
+    description: 'Architecture et développement d\'APIs robustes et évolutives pour vos applications.',
+    icon: Server,
+    features: [
+      'API RESTful et GraphQL',
+      'Architecture microservices',
+      'Authentification et sécurité',
+      'Optimisation base de données',
+      'Tests unitaires et d\'intégration',
+    ],
+    technologies: ['Node.js', 'Laravel', 'Express', 'PHP', 'MySQL', 'MongoDB'],
+  },
+  {
+    id: 'cloud-deployment',
+    title: 'Déploiement Cloud',
+    description: 'Déploiement et gestion d\'applications sur des plateformes cloud modernes.',
+    icon: Cloud,
+    features: [
+      'Déploiement sur Google Cloud Platform',
+      'Configuration Cloud Functions',
+      'Gestion Cloud Run et auto-scaling',
+      'Intégration Firebase',
+      'CI/CD et automatisation',
+    ],
+    technologies: ['GCP', 'Cloud Functions', 'Cloud Run', 'Firebase', 'Docker'],
+  },
+  {
+    id: 'technical-consulting',
+    title: 'Consulting Technique',
+    description: 'Conseil en architecture logicielle et accompagnement technique de vos équipes.',
+    icon: Lightbulb,
+    features: [
+      'Audit de code et architecture',
+      'Recommandations techniques',
+      'Formation des équipes',
+      'Choix technologiques',
+      'Best practices et optimisation',
+    ],
+    technologies: ['Architecture', 'Best Practices', 'Code Review', 'Mentoring'],
+  },
+  {
+    id: 'ui-ux-design',
+    title: 'UI/UX Design',
+    description: 'Conception d\'interfaces utilisateur intuitives et esthétiques centrées sur l\'expérience utilisateur.',
+    icon: Palette,
+    features: [
+      'Prototypage et maquettes Figma',
+      'Design systems et composants',
+      'User research et testing',
+      'Design responsive',
+      'Accessibilité (a11y)',
+    ],
+    technologies: ['Figma', 'Adobe XD', 'Sketch', 'InVision'],
+  },
+  {
+    id: 'api-development',
+    title: 'Développement d\'API',
+    description: 'Création d\'API performantes et bien documentées pour connecter vos applications.',
+    icon: Boxes,
+    features: [
+      'API RESTful standards',
+      'Documentation interactive',
+      'Versioning et migration',
+      'Rate limiting et sécurité',
+      'Monitoring et analytics',
+    ],
+    technologies: ['REST', 'GraphQL', 'Swagger', 'Postman'],
+  },
+];
