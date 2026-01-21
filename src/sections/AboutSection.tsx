@@ -37,11 +37,11 @@ const AboutSection: React.FC = () => {
       title: t('about.frontend'),
       icon: Code2,
       skills: [
-        { name: 'Angular 19+', percentage: 90 },
-        { name: 'React.js', percentage: 85 },
+        { name: 'Angular 19+', percentage: 65 },
+        { name: 'React.js', percentage: 75 },
         { name: 'Vue.js', percentage: 80 },
-        { name: 'TypeScript', percentage: 85 },
-        { name: 'Tailwind CSS', percentage: 90 },
+        { name: 'TypeScript', percentage: 65 },
+        { name: 'Tailwind CSS', percentage: 70 },
         { name: 'RxJS', percentage: 75 },
       ]
     },
@@ -49,22 +49,22 @@ const AboutSection: React.FC = () => {
       title: t('about.backend'),
       icon: Server,
       skills: [
-        { name: 'Laravel', percentage: 85 },
-        { name: 'Node.js', percentage: 80 },
-        { name: 'Express.js', percentage: 80 },
+        { name: 'Laravel', percentage: 75 },
+        { name: 'Node.js', percentage: 60 },
+        { name: 'Express.js', percentage: 40 },
         { name: 'PHP', percentage: 85 },
-        { name: 'MySQL / MongoDB', percentage: 80 },
+        { name: 'MySQL / MongoDB', percentage: 70 },
       ]
     },
     {
       title: t('about.cloudDevops'),
       icon: Cloud,
       skills: [
-        { name: 'Google Cloud Platform', percentage: 75 },
-        { name: 'Cloud Functions', percentage: 80 },
-        { name: 'Cloud Run', percentage: 80 },
-        { name: 'Firebase', percentage: 85 },
-        { name: 'Docker', percentage: 70 },
+        { name: 'Google Cloud Platform', percentage: 35 },
+        { name: 'Cloud Functions', percentage: 60 },
+        { name: 'Cloud Run', percentage: 60 },
+        { name: 'Firebase', percentage: 70 },
+        { name: 'Docker', percentage: 65 },
       ]
     },
     {
@@ -72,10 +72,10 @@ const AboutSection: React.FC = () => {
       icon: Wrench,
       skills: [
         { name: 'Telegram Bot API', percentage: 90 },
-        { name: 'Git / GitHub', percentage: 90 },
-        { name: 'Figma', percentage: 75 },
+        { name: 'Git / GitHub', percentage: 70 },
+        { name: 'Figma', percentage: 45 },
         { name: 'Postman', percentage: 85 },
-        { name: 'Agile / Scrum', percentage: 80 },
+        { name: 'Agile / Scrum', percentage: 70 },
       ]
     }
   ];
