@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 Disallow: /assets/
 
-Sitemap: https://chirac-portfolio-git-main-abdouchirac2024s-projects.vercel.app/sitemap.xml
+Sitemap: https://chirac-portfolio.vercel.app/sitemap.xml
 
 User-agent: Googlebot
 Allow: /
