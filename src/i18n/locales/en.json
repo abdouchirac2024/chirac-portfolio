@@ -17,17 +17,17 @@
   "hero": {
     "greeting": "Hello, I'm",
     "name": "Abdou",
-    "subtitle": "Front-End & Full Stack Developer",
-    "description": "I design fast, intuitive, and conversion-oriented user interfaces with React, Vue, and Tailwind.",
+    "subtitle": "Top Full Stack Developer from Cameroon",
+    "description": "One of the best Full Stack developers in Cameroon. I build high-performance web applications, cloud-native ERP systems, and modern interfaces with Angular, React, Vue.js, and Laravel.",
     "cta": "View my projects",
     "downloadCV": "Download CV"
   },
   "about": {
     "title": "About",
-    "subtitle": "More than a developer, a solution creator",
-    "description": "I'm NJUTAPMVOUI Abdou Arahamanou Chirac, a developer passionate about the intersection of design and technology. My goal isn't just to write code, but to create digital experiences that solve real problems.",
-    "passion": "I love transforming complex ideas into simple, intuitive, and high-performing interfaces. Whether it's optimizing a logistics process or facilitating access to information, I always place the end user at the heart of my technical decisions.",
-    "approach": "My approach combines technical rigor (Angular, React, Cloud) with product sensitivity. I strive to deliver applications that are not only robust and scalable, but also enjoyable to use on a daily basis.",
+    "subtitle": "One of the best Full Stack developers in Cameroon",
+    "description": "I'm Chirac NJUTAPMVOUI, a Full Stack developer based in Douala, Cameroon. With over 3 years of experience and 15+ successfully delivered projects, I specialize in building high-performance web applications and ERP systems with Angular, React, Vue.js, and Google Cloud Platform.",
+    "passion": "Recognized among the top web developers in Cameroon, I transform complex ideas into innovative digital solutions. From ERP development for logistics to deploying cloud-native architectures on Google Cloud Platform, every project is an opportunity to push boundaries.",
+    "approach": "My expertise spans the entire technical stack: Angular 19, React, Vue.js for frontend, Laravel and Node.js for backend, and Google Cloud Platform for deployment. This comprehensive mastery allows me to deliver robust, scalable, and high-performing applications.",
     "frontend": "Frontend",
     "backend": "Backend",
     "cloudDevops": "Cloud & DevOps",
@@ -45,8 +45,8 @@
     "happyClients": "Happy Clients"
   },
   "services": {
-    "title": "Services Offered",
-    "subtitle": "How I can help bring your projects to life",
+    "title": "Web Development Services in Cameroon",
+    "subtitle": "Expert Full Stack based in Douala - How I can help bring your digital projects to life",
     "getStarted": "Get Started",
     "learnMore": "Learn More",
     "popular": "Popular"
@@ -128,7 +128,7 @@
   },
   "projects": {
     "title": "My Projects",
-    "subtitle": "A selection of my recent work",
+    "subtitle": "15+ projects successfully delivered in Cameroon and Africa - Web applications, ERP systems, cloud platforms",
     "viewProject": "View project",
     "viewCode": "View code",
     "problem": "Problem",
@@ -184,7 +184,7 @@
   },
   "experience": {
     "title": "Professional Experience",
-    "subtitle": "Discover my professional journey in web development, with varied projects ranging from modern web applications to complex ERP systems.",
+    "subtitle": "Over 3 years of Full Stack development experience in Cameroon. From modern web applications to cloud-native ERP systems, discover the projects that make me one of the best developers in Cameroon.",
     "present": "Present",
     "responsibilities": "Responsibilities",
     "technologies": "Technologies",
@@ -298,7 +298,7 @@
   "contact": {
     "title": "Contact Me",
     "subtitle": "Let's talk about your project",
-    "description": "Looking for a Front-End developer capable of transforming your designs into high-performing interfaces? Or a Full Stack to build your MVP? Let's discuss how I can help your team.",
+    "description": "Looking for one of the best Full Stack developers in Cameroon? Expert in Angular, React, Vue.js, and Cloud, I can transform your ideas into high-performing web applications. Based in Douala, available for projects in Cameroon and Africa.",
     "name": "Name",
     "namePlaceholder": "Your name",
     "email": "Email",

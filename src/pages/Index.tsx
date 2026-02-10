@@ -17,12 +17,12 @@ import CertificationsSection from '../sections/CertificationsSection';
 const Index: React.FC = () => {
   useEffect(() => {
     // Set meta tags
-    document.title = "Chirac NJUTAPMVOUI - Développeur Full Stack ";
-    
+    document.title = "Chirac NJUTAPMVOUI - Meilleur Développeur Full Stack au Cameroun | Angular, React & Cloud";
+
     // Add meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute("content", "Portfolio professionnel de Chirac NJUTAPMVOUI, Développeur Full Stack spécialisé en React, Vue.js et Laravel");
+      metaDescription.setAttribute("content", "Chirac NJUTAPMVOUI, un des meilleurs développeurs Full Stack au Cameroun. Expert Angular 19, React, Vue.js, Laravel et Google Cloud. +3 ans d'expérience, +15 projets livrés à Douala.");
     }
     
     // Add scroll behavior
