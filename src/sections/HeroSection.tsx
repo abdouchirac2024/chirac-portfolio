@@ -55,12 +55,12 @@ const HeroSection: React.FC = () => {
 
           <div className="flex space-x-3 sm:space-x-4 mt-4 sm:mt-0">
             <Button variant="outline" size="icon" asChild className="h-10 w-10 sm:h-12 sm:w-12">
-              <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <a href="https://github.com/abdouchirac2024" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 <Github className="h-4 w-4 sm:h-5 sm:w-5" />
               </a>
             </Button>
             <Button variant="outline" size="icon" asChild className="h-10 w-10 sm:h-12 sm:w-12">
-              <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/abdou-njutapmvoui-288428223" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <Linkedin className="h-4 w-4 sm:h-5 sm:w-5" />
               </a>
             </Button>
