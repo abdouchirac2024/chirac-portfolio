@@ -23,7 +23,7 @@ const ParticleField: React.FC = () => {
   
   // Generate particle positions and colors
   const particlesData = useMemo(() => {
-    const count = 3000;
+    const count = 1500; // Reduced from 3000
     const positions = new Float32Array(count * 3);
     const colors = new Float32Array(count * 3);
     

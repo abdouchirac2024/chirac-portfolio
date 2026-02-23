@@ -1,18 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, lazy, Suspense } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import ParticleBackgroundSafe from '../components/ParticleBackgroundSafe';
 import HeroSection from '../sections/HeroSection';
 import AboutSection from '../sections/AboutSection';
-import StatsSection from '../sections/StatsSection';
-import ServicesSection from '../sections/ServicesSection';
-import ProjectsSection from '../sections/ProjectsSection';
-import EducationSection from '../sections/EducationSection';
-import ExperienceSection from '../sections/ExperienceSection';
-import ContactSection from '../sections/ContactSection';
 import CustomCursor from '../components/CustomCursor';
-import WorkJournalSection from '../sections/WorkJournalSection';
-import CertificationsSection from '../sections/CertificationsSection';
+
+// Lazy load heavy components
+const ParticleBackgroundSafe = lazy(() => import('../components/ParticleBackgroundSafe'));
+const StatsSection = lazy(() => import('../sections/StatsSection'));
+const ServicesSection = lazy(() => import('../sections/ServicesSection'));
+const ProjectsSection = lazy(() => import('../sections/ProjectsSection'));
+const EducationSection = lazy(() => import('../sections/EducationSection'));
+const ExperienceSection = lazy(() => import('../sections/ExperienceSection'));
+const ContactSection = lazy(() => import('../sections/ContactSection'));
+const WorkJournalSection = lazy(() => import('../sections/WorkJournalSection'));
+const CertificationsSection = lazy(() => import('../sections/CertificationsSection'));
 
 const Index: React.FC = () => {
   useEffect(() => {
@@ -35,20 +37,24 @@ const Index: React.FC = () => {
 
   return (
     <>
-      <ParticleBackgroundSafe />
+      <Suspense fallback={<div className="fixed inset-0 -z-10 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" />}>
+        <ParticleBackgroundSafe />
+      </Suspense>
       <CustomCursor />
       <Header />
       <main>
         <HeroSection />
         <AboutSection />
-        <StatsSection />
-        <ServicesSection />
-        <ExperienceSection />
-        <ProjectsSection />
-        <CertificationsSection />
-        <EducationSection />
-        <WorkJournalSection />
-        <ContactSection />
+        <Suspense fallback={<div className="min-h-screen" />}>
+          <StatsSection />
+          <ServicesSection />
+          <ExperienceSection />
+          <ProjectsSection />
+          <CertificationsSection />
+          <EducationSection />
+          <WorkJournalSection />
+          <ContactSection />
+        </Suspense>
       </main>
       <Footer />
     </>
